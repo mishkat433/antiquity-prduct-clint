@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { AuthContex } from '../../../Contex/AuthProvider';
 import "./Sidebar.css"
 
@@ -9,7 +9,7 @@ const Sidebar = () => {
     const [selectedProduct, setSelectedProduct] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5200/products")
+        fetch("https://antiquity-server.vercel.app/products")
             .then(res => res.json())
             .then(data => {
                 let arr = []

@@ -61,7 +61,7 @@ const SignUP = () => {
 
     const saveLoginUser = (name, email) => {
         const user = { name, email, userType: "user" }
-        fetch('http://localhost:5200/makeUser', {
+        fetch('https://antiquity-server.vercel.app/makeUser', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const SignUP = () => {
             <div className="login-image" >
                 <img src={loginImg} alt="" />
             </div>
-            <div className=' form mt'>
+            <div className=' form '>
                 <form onSubmit={registerHandle} className="" >
                     {error && <p className='error-text'>{error}</p>}
                     <div className="form-control mb">

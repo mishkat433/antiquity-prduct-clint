@@ -10,7 +10,7 @@ const useCheckUser = (email) => {
 
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5200/usersCheck/${email}`, {
+            fetch(`https://antiquity-server.vercel.app/usersCheck/${email}`, {
             })
                 .then(res => res.json())
                 .then(data => {

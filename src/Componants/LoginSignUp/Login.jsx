@@ -70,7 +70,7 @@ const Login = () => {
             <div className="login-image" data-aos="fade-right">
                 <img src={image} alt="" />
             </div>
-            <div className='form mt'>
+            <div className='form '>
                 <form onSubmit={LoginHandle} className="">
                     <h1 className=''>Login</h1>
                     {error && <p className='error-text'>{error}</p>}

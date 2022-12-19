@@ -1,7 +1,7 @@
 .full-nav {
     background-color: white;
     box-shadow: 0px 1px 15px -4px grey;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 20;
@@ -9,9 +9,15 @@
 
 .nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
+.bar {
+    display: none;
+}
+
 
 .logo {
     height: 40px;
@@ -37,6 +43,10 @@
     font-size: 18px;
 }
 
+.show-hide {
+    display: flex;
+}
+
 .shopping {
     font-size: 20px;
     color: rgb(82, 13, 13);
@@ -46,4 +56,27 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+
+@media screen and (max-width:688px) {
+    .nav-option {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        top: 30px;
+        right: 20px;
+        background-color: rgb(247, 229, 229);
+        padding: 20px;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .show-hide {
+        display: none;
+    }
 }

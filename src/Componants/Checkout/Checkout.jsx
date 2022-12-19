@@ -21,7 +21,7 @@ const Checkout = () => {
 
     return (
         <div className='container'>
-            <div className='mt checkout-form'>
+            <div className=' checkout-form'>
 
                 <form onSubmit={checkoutHandle} className='form'>
                     <h3>Check out form</h3>

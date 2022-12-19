@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import "./Navbar.css";
 import logo from "../../../Assets/logo.png";
 import { Link, NavLink } from 'react-router-dom';
-import { FaShopify } from 'react-icons/fa';
+import { FaBars, FaShopify } from 'react-icons/fa';
 import { AuthContex } from '../../../Contex/AuthProvider';
 import useCheckUser from '../../../hooks/useCheckUser';
 const Navbar = () => {
     const { sidebar, setSidebar, products, loginUser, logout } = useContext(AuthContex)
     const [checkUser, userCheckLoading] = useCheckUser(loginUser?.email)
+    const [bar, setBar] = useState(false)
     console.log(userCheckLoading);
+
     const sidebarHandle = () => {
         setSidebar(!sidebar)
     }
@@ -30,10 +32,14 @@ const Navbar = () => {
                 <div>
                     <Link to='/'> <img className='logo' src={logo} alt="navLogo" /></Link>
                 </div>
+
                 <div>
-                    <ul className='nav-option'>
+                    <ul className={bar ? 'nav-option' : 'show-hide nav-option'}>
                         {navItem}
                     </ul>
+                </div>
+                <div className='bar'>
+                    <FaBars onClick={() => setBar(!bar)} />
                 </div>
             </div >
         </nav >

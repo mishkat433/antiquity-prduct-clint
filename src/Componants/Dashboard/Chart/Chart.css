@@ -1,0 +1,73 @@
+.full-chart {
+    margin-top: 30px;
+}
+
+.chart {
+    margin-left: 80px;
+    width: 100%;
+}
+
+.dashboard-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.donutchart-arcs-path,
+.donutchart-legend-item,
+.donutchart-legend-item-label {
+    cursor: pointer;
+}
+
+.donutchart-innertext-label {
+    font-size: 18px;
+}
+
+.donutchart-innertext-value {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.donutchart-arcs-path,
+.donutchart-legend-item {
+    fill-opacity: 0;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: DrawLine, FillIn;
+    animation-delay: 0.5s, 2s;
+    animation-duration: 3s, 1s;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+}
+
+@keyframes DrawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes FillIn {
+    from {
+        fill-opacity: 0;
+    }
+
+    to {
+        fill-opacity: 1;
+    }
+}
+
+.selected.donutchart-legend-item-label,
+.toggled.donutchart-legend-item-label {
+    fill: #f44336;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:688px) {
+    .chart {
+        overflow-x: scroll;
+    }
+
+    .donutchart {
+        width: 400px;
+    }
+}

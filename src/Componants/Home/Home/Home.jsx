@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className='container'>
             <div className={sidebar ? 'home-layout' : undefined}>
-                <div className='mt'>
+                <div className=''>
                     <Banner />
                     <Location />
                     <Products />

@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Componants/Blog/Blog";
 import Checkout from "../../Componants/Checkout/Checkout";
+import Chart from "../../Componants/Dashboard/Chart/Chart";
+import Dashboard from "../../Componants/Dashboard/Dashboard/Dashboard";
+import ImageUpload from "../../Componants/Dashboard/ImageUpload/ImageUpload";
 import Home from "../../Componants/Home/Home/Home";
 import Login from "../../Componants/LoginSignUp/Login";
 import SignUP from "../../Componants/LoginSignUp/SignUP";
@@ -47,12 +50,20 @@ const routes = createBrowserRouter([
     {
         path: '/dashboard',
         element: <AdminLayout />,
-        // children: [
-        //     {
-        //         path: '/dashboard',
-        //         element: <Home />
-        //     },
-        // ]
+        children: [
+            {
+                path: '/dashboard/dataTable',
+                element: <Dashboard />
+            },
+            {
+                path: '/dashboard/imageUpload',
+                element: <ImageUpload />
+            },
+            {
+                path: '/dashboard/chart',
+                element: <Chart />
+            },
+        ]
     }
 
 ])

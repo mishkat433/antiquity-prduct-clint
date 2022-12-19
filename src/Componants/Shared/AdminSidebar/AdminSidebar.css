@@ -1,0 +1,42 @@
+.sidebar-bg {
+    background-color: white;
+    height: 80vh;
+    border-radius: 5px;
+}
+
+.side-nav {
+    list-style-type: none;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sidebar-link {
+    color: black;
+    margin-top: 10px;
+}
+
+.sidebar-active {
+    font-weight: bold;
+    color: brown;
+
+}
+
+@media screen and (max-width:688px) {
+    .sidebar-bg {
+        background-color: white;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .side-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 10px;
+    }
+}
