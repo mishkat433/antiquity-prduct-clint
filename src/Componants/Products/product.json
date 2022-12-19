@@ -1,0 +1,65 @@
+[
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435230/antiquity/image5_htfuws.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435228/antiquity/image8_oerhor.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435229/antiquity/image3_eydrr7.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435228/antiquity/image4_xhczwp.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435227/antiquity/image7_utpg3v.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435227/antiquity/image6_wigccj.avif"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435226/antiquity/image2_mlw2ay.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435224/antiquity/img1_epy0on.jpg"
+    },
+    {
+        "name": "antiquity product",
+        "price": 120,
+        "address": "dhaka",
+        "stock": 20,
+        "image": "https://res.cloudinary.com/dcugk5q1h/image/upload/v1671435225/antiquity/image9_ps82zm.jpg"
+    }
+]

@@ -1,0 +1,15 @@
+.full-location {
+    box-shadow: 0px 8px 22px -10px grey;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.full-location h1 {
+    text-align: center;
+}
+
+.location {
+    color: brown;
+}
+
+@media screen and (max-width:688px) {}
