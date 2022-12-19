@@ -1,23 +1,19 @@
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API,
-    authDomain: process.env.REACT_APP_authDomain,
-    projectId: process.env.REACT_APP_projectId,
-    storageBucket: process.env.REACT_APP_storageBucket,
-    messagingSenderId: process.env.REACT_APP_messagingSenderId,
-    appId: process.env.REACT_APP_appId,
-    measurementId: process.env.REACT_APP_measurementId
+    apiKey: "AIzaSyCvhkJgH2Hcd24BTfl2O-HhA1Z1gn_2bEo",
+    authDomain: "antituity-project.firebaseapp.com",
+    projectId: "antituity-project",
+    storageBucket: "antituity-project.appspot.com",
+    messagingSenderId: "781794170142",
+    appId: "1:781794170142:web:7c9e80abc919738aaae50f"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+
 export default app;

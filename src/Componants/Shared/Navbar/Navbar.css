@@ -21,16 +21,23 @@
 .nav-option {
     list-style-type: none;
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .nav-link {
     text-decoration: none;
     color: black;
+    font-size: 18px;
 }
 
 .nav-active {
     font-weight: bold;
     text-decoration: none;
     color: black;
+    font-size: 18px;
+}
+
+.shopping {
+    font-size: 20px;
+    color: brown;
 }

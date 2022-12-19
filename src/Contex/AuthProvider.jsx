@@ -9,6 +9,8 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
     const [loginUser, setLoginUser] = useState(null);
     const [loading, setLoading] = useState(true)
+    const [sidebar, setSidebar] = useState(false)
+    const [products, setProducts] = useState([])
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -58,7 +60,9 @@ const AuthProvider = ({ children }) => {
         createUser,
         profileUpdate,
         githubLogin,
-
+        sidebar,
+        setSidebar,
+        products, setProducts
     }
 
     return (

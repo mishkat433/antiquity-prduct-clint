@@ -1,0 +1,40 @@
+.product-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+.product-card {
+    box-shadow: 0px 8px 22px -10px grey;
+    border-radius: 5px;
+}
+
+
+.product-image {
+    height: 300px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 0 20px;
+    text-transform: capitalize;
+}
+
+.card-body h3 {
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-card {
+    width: 100%;
+    padding: 10px 0px;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: none;
+}

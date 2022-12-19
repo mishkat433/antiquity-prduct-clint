@@ -8,6 +8,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -37,6 +38,7 @@ a {
   padding: 3px 5px;
   border-radius: 3px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .loading {

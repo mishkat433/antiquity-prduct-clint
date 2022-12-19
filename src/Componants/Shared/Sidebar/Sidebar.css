@@ -1,0 +1,29 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(247, 228, 228, 0.934);
+    padding: 0 20px;
+}
+
+.checkout {
+    margin-top: 30px;
+}
+
+.checkout-btn {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkout-btn:hover {
+    background-color: rgb(5, 111, 76);
+    color: white;
+    transition: 0.5s;
+}
