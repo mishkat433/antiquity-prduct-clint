@@ -1,0 +1,12 @@
+.full-footer {
+    background-color: rgb(52, 12, 12);
+}
+
+
+.footer-content {
+    text-align: center;
+    padding: 20px 0px;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 500;
+}

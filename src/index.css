@@ -23,6 +23,10 @@ a {
   margin: 80px 0px;
 }
 
+.mb {
+  margin-bottom: 20px;
+}
+
 .pt {
   padding-top: 30px;
 }

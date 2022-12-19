@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth"
 import app from '../Firebase/Firebase.config';
+import { toast } from 'react-hot-toast';
 // import { toast } from 'react-toastify';
 
 export const AuthContex = createContext();
@@ -34,12 +35,12 @@ const AuthProvider = ({ children }) => {
     }
 
     const profileUpdate = (name, photo) => {
+
         return updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
     }
 
     const logout = () => {
-
-        localStorage.removeItem('photo-token');
+        toast.success("logout")
         signOut(auth).then(result => { }).catch(err => console.log(err.message))
     }
 
@@ -50,8 +51,6 @@ const AuthProvider = ({ children }) => {
         })
         return () => unsubscribe();
     }, [])
-
-
     const authInfo = {
         loginUser, setLoginUser, loading, setLoading,
         googleSiginIn,

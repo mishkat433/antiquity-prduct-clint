@@ -1,0 +1,280 @@
+[debug] [2022-12-19T14:13:09.835Z] ----------------------------------------------------------------------
+[debug] [2022-12-19T14:13:09.842Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mishk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-19T14:13:09.844Z] CLI Version:   11.14.4
+[debug] [2022-12-19T14:13:09.844Z] Platform:      win32
+[debug] [2022-12-19T14:13:09.845Z] Node Version:  v16.16.0
+[debug] [2022-12-19T14:13:09.852Z] Time:          Mon Dec 19 2022 20:13:09 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-19T14:13:09.853Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-19T14:13:10.076Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-19T14:13:10.077Z] > authorizing via signed-in user (mishkat5826@gmail.com)
+[debug] [2022-12-19T14:13:10.077Z] [iam] checking project antituity-project for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-19T14:13:10.084Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions [none]
+[debug] [2022-12-19T14:13:10.084Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions x-goog-quota-user=projects/antituity-project
+[debug] [2022-12-19T14:13:10.085Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-19T14:13:15.691Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions 200
+[debug] [2022-12-19T14:13:15.692Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-19T14:13:15.695Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project [none]
+[debug] [2022-12-19T14:13:23.985Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project 200
+[debug] [2022-12-19T14:13:23.986Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project {"projectId":"antituity-project","projectNumber":"781794170142","displayName":"antituity-project","name":"projects/antituity-project","resources":{"hostingSite":"antituity-project"},"state":"ACTIVE","etag":"1_8002dc7f-4564-425a-aec0-673955047668"}
+[info] 
+[info] === Deploying to 'antituity-project'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-12-19T14:13:23.995Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions [none]
+[debug] [2022-12-19T14:13:23.995Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-12-19T14:13:30.534Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions 200
+[debug] [2022-12-19T14:13:30.535Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions {"name":"projects/781794170142/sites/antituity-project/versions/2ab365cc102c8d43","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[antituity-project]: beginning deploy... 
+[info] i  hosting[antituity-project]: found 14 files in build 
+[debug] [2022-12-19T14:13:30.574Z] [hosting] uploading with 200 concurrency
+[debug] [2022-12-19T14:13:30.577Z] [hosting] hash cache [YnVpbGQ] not populated
+[debug] [2022-12-19T14:13:31.371Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-12-19T14:13:31.371Z] [hosting][hash queue][FINAL] {"max":770,"min":28,"avg":91.64285714285714,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":788}
+[debug] [2022-12-19T14:13:31.373Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/2ab365cc102c8d43:populateFiles [none]
+[debug] [2022-12-19T14:13:31.373Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/2ab365cc102c8d43:populateFiles {"files":{"/asset-manifest.json":"30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/index.html":"b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/static/css/main.f8ddd231.css":"8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00","/static/js/main.6fd9132d.js.LICENSE.txt":"3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9","/static/css/main.f8ddd231.css.map":"700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add","/static/media/login.f985d5827ff684a793b6.gif":"6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963","/static/media/logo.928a2319ccf273dda37d.png":"e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa","/static/media/image2.ba29fdf6198ca5834b96.jpg":"eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d","/static/media/image1.b7d8f0d15cb6dfc347bf.jpg":"6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a","/static/js/main.6fd9132d.js":"e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498","/static/js/main.6fd9132d.js.map":"c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec"}}
+[debug] [2022-12-19T14:13:59.385Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/2ab365cc102c8d43:populateFiles 200
+[debug] [2022-12-19T14:13:59.386Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/2ab365cc102c8d43:populateFiles {"uploadRequiredHashes":["b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07","8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00","3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9","e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa","c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec","6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a","eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d","e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498","bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add","aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963","30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files"}
+[debug] [2022-12-19T14:13:59.391Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07 [none]
+[debug] [2022-12-19T14:13:59.391Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07 [stream]
+[debug] [2022-12-19T14:13:59.393Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00 [none]
+[debug] [2022-12-19T14:13:59.393Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00 [stream]
+[debug] [2022-12-19T14:13:59.396Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9 [none]
+[debug] [2022-12-19T14:13:59.396Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9 [stream]
+[debug] [2022-12-19T14:13:59.398Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [none]
+[debug] [2022-12-19T14:13:59.399Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [stream]
+[debug] [2022-12-19T14:13:59.400Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T14:13:59.400Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T14:13:59.402Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [none]
+[debug] [2022-12-19T14:13:59.402Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:13:59.404Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [none]
+[debug] [2022-12-19T14:13:59.405Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [stream]
+[debug] [2022-12-19T14:13:59.406Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [none]
+[debug] [2022-12-19T14:13:59.407Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [stream]
+[debug] [2022-12-19T14:13:59.411Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498 [none]
+[debug] [2022-12-19T14:13:59.411Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498 [stream]
+[debug] [2022-12-19T14:13:59.415Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 [none]
+[debug] [2022-12-19T14:13:59.415Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 [stream]
+[debug] [2022-12-19T14:13:59.418Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add [none]
+[debug] [2022-12-19T14:13:59.419Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add [stream]
+[debug] [2022-12-19T14:13:59.422Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a [none]
+[debug] [2022-12-19T14:13:59.422Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a [stream]
+[debug] [2022-12-19T14:13:59.425Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963 [none]
+[debug] [2022-12-19T14:13:59.425Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963 [stream]
+[debug] [2022-12-19T14:13:59.427Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4 [none]
+[debug] [2022-12-19T14:13:59.427Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4 [stream]
+[debug] [2022-12-19T14:13:59.430Z] [hosting][populate queue][FINAL] {"max":28024,"min":28024,"avg":28024,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":28064}
+[debug] [2022-12-19T14:13:59.430Z] [hosting] uploads queued: 14
+[debug] [2022-12-19T14:14:02.029Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07 200
+[debug] [2022-12-19T14:14:02.029Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07 [stream]
+[debug] [2022-12-19T14:14:03.049Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 200
+[debug] [2022-12-19T14:14:03.049Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 [stream]
+[debug] [2022-12-19T14:14:03.246Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9 200
+[debug] [2022-12-19T14:14:03.247Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9 [stream]
+[debug] [2022-12-19T14:14:03.636Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add 200
+[debug] [2022-12-19T14:14:03.636Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add [stream]
+[debug] [2022-12-19T14:14:03.777Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00 200
+[debug] [2022-12-19T14:14:03.777Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00 [stream]
+[debug] [2022-12-19T14:14:05.999Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a 200
+[debug] [2022-12-19T14:14:05.999Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a [stream]
+[debug] [2022-12-19T14:14:11.839Z] [uploadQueue] Retrying task 30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4
+[debug] [2022-12-19T14:14:11.840Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4 [none]
+[debug] [2022-12-19T14:14:11.841Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4 [stream]
+[debug] [2022-12-19T14:14:14.594Z] [uploadQueue] Retrying task 6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963
+[debug] [2022-12-19T14:14:14.595Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963 [none]
+[debug] [2022-12-19T14:14:14.595Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963 [stream]
+[debug] [2022-12-19T14:14:15.592Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4 200
+[debug] [2022-12-19T14:14:15.592Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4 [stream]
+[debug] [2022-12-19T14:14:22.193Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963 200
+[debug] [2022-12-19T14:14:22.193Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963 [stream]
+[debug] [2022-12-19T14:14:29.795Z] [uploadQueue] Retrying task e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa
+[debug] [2022-12-19T14:14:29.797Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [none]
+[debug] [2022-12-19T14:14:29.797Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [stream]
+[debug] [2022-12-19T14:14:29.800Z] [uploadQueue] Retrying task 6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a
+[debug] [2022-12-19T14:14:29.800Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [none]
+[debug] [2022-12-19T14:14:29.801Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:14:29.803Z] [uploadQueue] Retrying task eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9
+[debug] [2022-12-19T14:14:29.804Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [none]
+[debug] [2022-12-19T14:14:29.804Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [stream]
+[debug] [2022-12-19T14:14:29.807Z] [uploadQueue] Retrying task eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d
+[debug] [2022-12-19T14:14:29.807Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [none]
+[debug] [2022-12-19T14:14:29.807Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [stream]
+[debug] [2022-12-19T14:14:29.810Z] [uploadQueue] Retrying task e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498
+[debug] [2022-12-19T14:14:29.810Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498 [none]
+[debug] [2022-12-19T14:14:29.811Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498 [stream]
+[debug] [2022-12-19T14:14:31.944Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 200
+[debug] [2022-12-19T14:14:31.945Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [stream]
+[debug] [2022-12-19T14:14:33.017Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498 200
+[debug] [2022-12-19T14:14:33.017Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498 [stream]
+[debug] [2022-12-19T14:15:00.620Z] [uploadQueue] Retrying task e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa
+[debug] [2022-12-19T14:15:00.622Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [none]
+[debug] [2022-12-19T14:15:00.622Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [stream]
+[debug] [2022-12-19T14:15:00.625Z] [uploadQueue] Retrying task 6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a
+[debug] [2022-12-19T14:15:00.626Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [none]
+[debug] [2022-12-19T14:15:00.627Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:15:00.630Z] [uploadQueue] Retrying task eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d
+[debug] [2022-12-19T14:15:00.632Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [none]
+[debug] [2022-12-19T14:15:00.632Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [stream]
+[debug] [2022-12-19T14:15:05.036Z] [uploadQueue] Retrying task c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec
+[debug] [2022-12-19T14:15:05.037Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T14:15:05.038Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T14:15:25.221Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa 200
+[debug] [2022-12-19T14:15:25.222Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa [stream]
+[debug] [2022-12-19T14:15:32.237Z] [uploadQueue] Retrying task 6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a
+[debug] [2022-12-19T14:15:32.238Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [none]
+[debug] [2022-12-19T14:15:32.238Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:15:32.241Z] [uploadQueue] Retrying task eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d
+[debug] [2022-12-19T14:15:32.242Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [none]
+[debug] [2022-12-19T14:15:32.243Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [stream]
+[debug] [2022-12-19T14:16:05.459Z] [uploadQueue] Retrying task 6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a
+[debug] [2022-12-19T14:16:05.461Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [none]
+[debug] [2022-12-19T14:16:05.462Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:16:05.467Z] [uploadQueue] Retrying task eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d
+[debug] [2022-12-19T14:16:05.469Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [none]
+[debug] [2022-12-19T14:16:05.469Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [stream]
+[debug] [2022-12-19T14:16:11.059Z] [uploadQueue] Retrying task c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec
+[debug] [2022-12-19T14:16:11.060Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T14:16:11.060Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T14:16:14.031Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d 200
+[debug] [2022-12-19T14:16:14.032Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d [stream]
+[debug] [2022-12-19T14:16:41.884Z] [uploadQueue] Retrying task 6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a
+[debug] [2022-12-19T14:16:41.885Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [none]
+[debug] [2022-12-19T14:16:41.885Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:16:48.268Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a 200
+[debug] [2022-12-19T14:16:48.269Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a [stream]
+[debug] [2022-12-19T14:17:17.904Z] [uploadQueue] Retrying task c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec
+[debug] [2022-12-19T14:17:17.905Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T14:17:17.905Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T14:18:26.355Z] [uploadQueue] Retrying task c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec
+[debug] [2022-12-19T14:18:26.356Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T14:18:26.357Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T14:19:37.990Z] [uploadQueue] Retrying task c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec
+[debug] [2022-12-19T14:19:37.991Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T14:19:37.991Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] Task c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec failed: retries exhausted after 6 attempts, with error: Timeout reached making request to https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/2ab365cc102c8d43/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec
+[debug] [2022-12-19T14:20:43.226Z] [hosting][upload queue][FINAL] {"max":24601,"min":2142,"avg":6281.846153846154,"active":0,"complete":14,"success":13,"errored":1,"retried":20,"total":14,"elapsed":403840}
+[debug] [2022-12-19T14:20:48.256Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\mishk\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-12-19T14:32:12.925Z] ----------------------------------------------------------------------
+[debug] [2022-12-19T14:32:12.933Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mishk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-19T14:32:12.934Z] CLI Version:   11.14.4
+[debug] [2022-12-19T14:32:12.935Z] Platform:      win32
+[debug] [2022-12-19T14:32:12.935Z] Node Version:  v16.16.0
+[debug] [2022-12-19T14:32:12.943Z] Time:          Mon Dec 19 2022 20:32:12 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-19T14:32:12.943Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-19T14:32:13.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-19T14:32:13.201Z] > authorizing via signed-in user (mishkat5826@gmail.com)
+[debug] [2022-12-19T14:32:13.202Z] [iam] checking project antituity-project for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-19T14:32:13.209Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions [none]
+[debug] [2022-12-19T14:32:13.210Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions x-goog-quota-user=projects/antituity-project
+[debug] [2022-12-19T14:32:13.210Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-19T14:32:16.710Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions 200
+[debug] [2022-12-19T14:32:16.710Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-19T14:32:16.714Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project [none]
+[debug] [2022-12-19T14:32:46.723Z] Timeout reached making request to https://firebase.googleapis.com/v1beta1/projects/antituity-project
+[debug] [2022-12-19T14:32:51.755Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\mishk\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-12-19T16:32:46.990Z] ----------------------------------------------------------------------
+[debug] [2022-12-19T16:32:46.994Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mishk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-19T16:32:46.994Z] CLI Version:   11.14.4
+[debug] [2022-12-19T16:32:46.995Z] Platform:      win32
+[debug] [2022-12-19T16:32:46.995Z] Node Version:  v16.16.0
+[debug] [2022-12-19T16:32:47.001Z] Time:          Mon Dec 19 2022 22:32:46 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-19T16:32:47.001Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-19T16:32:47.152Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-19T16:32:47.153Z] > authorizing via signed-in user (mishkat5826@gmail.com)
+[debug] [2022-12-19T16:32:47.153Z] [iam] checking project antituity-project for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-19T16:32:47.155Z] > refreshing access token with scopes: []
+[debug] [2022-12-19T16:32:47.158Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-19T16:32:47.158Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-19T16:32:47.626Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-19T16:32:47.626Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-19T16:32:47.639Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions [none]
+[debug] [2022-12-19T16:32:47.639Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions x-goog-quota-user=projects/antituity-project
+[debug] [2022-12-19T16:32:47.639Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-19T16:32:50.329Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions 200
+[debug] [2022-12-19T16:32:50.329Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/antituity-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-19T16:32:50.331Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project [none]
+[debug] [2022-12-19T16:32:51.409Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project 200
+[debug] [2022-12-19T16:32:51.409Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/antituity-project {"projectId":"antituity-project","projectNumber":"781794170142","displayName":"antituity-project","name":"projects/antituity-project","resources":{"hostingSite":"antituity-project"},"state":"ACTIVE","etag":"1_8002dc7f-4564-425a-aec0-673955047668"}
+[info] 
+[info] === Deploying to 'antituity-project'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-12-19T16:32:51.415Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions [none]
+[debug] [2022-12-19T16:32:51.415Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-12-19T16:32:56.793Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions 200
+[debug] [2022-12-19T16:32:56.793Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions {"name":"projects/781794170142/sites/antituity-project/versions/8543dc4259424036","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[antituity-project]: beginning deploy... 
+[info] i  hosting[antituity-project]: found 14 files in build 
+[debug] [2022-12-19T16:32:56.812Z] [hosting] uploading with 200 concurrency
+[debug] [2022-12-19T16:32:56.821Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2022-12-19T16:32:56.822Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":5}
+[debug] [2022-12-19T16:32:56.822Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/8543dc4259424036:populateFiles [none]
+[debug] [2022-12-19T16:32:56.822Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/8543dc4259424036:populateFiles {"files":{"/asset-manifest.json":"30b637c5cb7ab2248af6e479cd3e1be39f71d533acc272f9958916d76dfc99a4","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/index.html":"b27641afdf918020560b5b24d4b6b3655e898643da10a84b1af09e7d8166cc07","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/css/main.f8ddd231.css":"8d9ad64e162bed696938f62e8d51976e0b7934e992c6f917c4c27c6ff8e6ea00","/static/css/main.f8ddd231.css.map":"700b323ffca2a8e91918e967e38cb61bb5bd9f68e8e07e09e70f4d71072a1add","/static/js/main.6fd9132d.js":"e06c03d58d77d1e9a7752e01387698846045f2d59d22f03879c75a6b6707e498","/static/js/main.6fd9132d.js.LICENSE.txt":"3f333967406ceb0af499a490c65498bc92ab245d8a71f4d5a29caf8af93639c9","/static/js/main.6fd9132d.js.map":"c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec","/static/media/image1.b7d8f0d15cb6dfc347bf.jpg":"6a745e9da745f52d32d950be790a721367834ab46916fecb41a83d9c1567210a","/static/media/image2.ba29fdf6198ca5834b96.jpg":"eedd33384de7a4289fc587e6044cb4716a4499c7d4a5b4a068f223c8df02b38d","/static/media/login.f985d5827ff684a793b6.gif":"6d7d667b3efb49fd91d6e4d94881e920bc31b17040a0973bd9d869e44a586963","/static/media/logo.928a2319ccf273dda37d.png":"e94ab75a8e866c1453963939c226795966701b392075013fadb6f33dc0e09bfa"}}
+[debug] [2022-12-19T16:32:58.746Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/8543dc4259424036:populateFiles 200
+[debug] [2022-12-19T16:32:58.746Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/781794170142/sites/antituity-project/versions/8543dc4259424036:populateFiles {"uploadRequiredHashes":["c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/8543dc4259424036/files"}
+[debug] [2022-12-19T16:32:58.749Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/8543dc4259424036/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [none]
+[debug] [2022-12-19T16:32:58.749Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/8543dc4259424036/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T16:32:58.751Z] [hosting][populate queue][FINAL] {"max":1929,"min":1929,"avg":1929,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1931}
+[debug] [2022-12-19T16:32:58.751Z] [hosting] uploads queued: 1
+[debug] [2022-12-19T16:33:03.105Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/8543dc4259424036/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec 200
+[debug] [2022-12-19T16:33:03.105Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/antituity-project/versions/8543dc4259424036/files/c7d44b2a7d56b36ed715c56e5d6666f9450891539856288f799aa495a0c3aeec [stream]
+[debug] [2022-12-19T16:33:03.105Z] [hosting][upload queue][FINAL] {"max":4358,"min":4358,"avg":4358,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":4358}
+[info] +  hosting[antituity-project]: file upload complete 
+[debug] [2022-12-19T16:33:03.107Z] [hosting] deploy completed after 6312ms
+[debug] [2022-12-19T16:33:03.111Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "antituity-project"
+    },
+    "version": "projects/781794170142/sites/antituity-project/versions/8543dc4259424036"
+  }
+]
+[info] i  hosting[antituity-project]: finalizing version... 
+[debug] [2022-12-19T16:33:03.115Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions/8543dc4259424036 updateMask=status%2Cconfig
+[debug] [2022-12-19T16:33:03.115Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions/8543dc4259424036 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-12-19T16:33:04.981Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions/8543dc4259424036 200
+[debug] [2022-12-19T16:33:04.981Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/versions/8543dc4259424036 {"name":"projects/781794170142/sites/antituity-project/versions/8543dc4259424036","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-19T16:32:56.055729Z","createUser":{"email":"mishkat5826@gmail.com"},"finalizeTime":"2022-12-19T16:33:05.962546Z","finalizeUser":{"email":"mishkat5826@gmail.com"}}
+[debug] [2022-12-19T16:33:04.982Z] [hosting] finalized version for antituity-project:[object Object]
+[info] +  hosting[antituity-project]: version finalized 
+[info] i  hosting[antituity-project]: releasing new version... 
+[debug] [2022-12-19T16:33:04.983Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/channels/live/releases versionName=projects%2F781794170142%2Fsites%2Fantituity-project%2Fversions%2F8543dc4259424036
+[debug] [2022-12-19T16:33:04.983Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/channels/live/releases {}
+[debug] [2022-12-19T16:33:08.026Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/channels/live/releases 200
+[debug] [2022-12-19T16:33:08.026Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/antituity-project/channels/live/releases {"name":"projects/781794170142/sites/antituity-project/channels/live/releases/1671467587259046","version":{"name":"projects/781794170142/sites/antituity-project/versions/8543dc4259424036","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-19T16:32:56.055729Z","createUser":{"email":"mishkat5826@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp74CxxaOx1PlFMKQ4K3ZksnyxzXLpghh0rgwAuE"},"finalizeTime":"2022-12-19T16:33:05.962546Z","finalizeUser":{"email":"mishkat5826@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp74CxxaOx1PlFMKQ4K3ZksnyxzXLpghh0rgwAuE"}},"type":"DEPLOY","releaseTime":"2022-12-19T16:33:07.259046037Z","releaseUser":{"email":"mishkat5826@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp74CxxaOx1PlFMKQ4K3ZksnyxzXLpghh0rgwAuE"}}
+[debug] [2022-12-19T16:33:08.026Z] [hosting] release: {"name":"projects/781794170142/sites/antituity-project/channels/live/releases/1671467587259046","version":{"name":"projects/781794170142/sites/antituity-project/versions/8543dc4259424036","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-19T16:32:56.055729Z","createUser":{"email":"mishkat5826@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp74CxxaOx1PlFMKQ4K3ZksnyxzXLpghh0rgwAuE"},"finalizeTime":"2022-12-19T16:33:05.962546Z","finalizeUser":{"email":"mishkat5826@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp74CxxaOx1PlFMKQ4K3ZksnyxzXLpghh0rgwAuE"}},"type":"DEPLOY","releaseTime":"2022-12-19T16:33:07.259046037Z","releaseUser":{"email":"mishkat5826@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp74CxxaOx1PlFMKQ4K3ZksnyxzXLpghh0rgwAuE"}}
+[info] +  hosting[antituity-project]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/antituity-project/overview
+[info] Hosting URL: https://antituity-project.web.app
+[debug] [2022-12-19T16:33:14.286Z] Error: Timed out.
+    at Timeout.<anonymous> (C:\Users\mishk\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -1,0 +1,10 @@
+.social-btn {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.social-btn:hover {
+    background-color: brown;
+}

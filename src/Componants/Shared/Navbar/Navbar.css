@@ -39,5 +39,11 @@
 
 .shopping {
     font-size: 20px;
-    color: brown;
+    color: rgb(82, 13, 13);
+}
+
+.after-login {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

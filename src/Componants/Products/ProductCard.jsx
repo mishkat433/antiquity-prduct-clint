@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { AuthContex } from '../../Contex/AuthProvider';
+import React from 'react';
 import "./Products.css"
 
 const ProductCard = ({ singleProduct, addToCartHandle }) => {

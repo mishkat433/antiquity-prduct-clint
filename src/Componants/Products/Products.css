@@ -38,3 +38,21 @@
     text-transform: capitalize;
     border: none;
 }
+
+@media screen and (max-width:896px) {
+    .product-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+}
+
+@media screen and (max-width:688px) {
+    .product-section {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+}

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContex } from '../../../Contex/AuthProvider';
-// import { AuthContex } from '../../../Contex/AuthProvider';
 import "./Sidebar.css"
 
 const Sidebar = () => {
@@ -16,8 +15,8 @@ const Sidebar = () => {
                 let arr = []
                 products.forEach(singleProducts => {
 
-                    const fil = data.filter(da => da?._id === singleProducts)
-                    arr.push(fil)
+                    const productFilter = data.filter(da => da?._id === singleProducts)
+                    arr.push(productFilter)
                 });
                 setSelectedProduct(arr)
             })
@@ -35,6 +34,7 @@ const Sidebar = () => {
         setProducts([])
         toast.success("Cart Item remove successful")
     }
+
 
     return (
         <div className='container'>
@@ -57,16 +57,16 @@ const Sidebar = () => {
                             <p>Grand Total : <span>${grandTotal}</span></p>
                         </div>
                         <div className='flex justify-between px-5 mt-5'>
-                            <button disabled={products?.length !== 0 ? false : true} className="button add-to-card" onClick={removeHandle}>
-                                Remove cart items</button>
+                            <button disabled={products?.length !== 0 ? false : true} className="add-to-card" onClick={removeHandle}>
+                                Remove Al cart items</button>
                         </div>
                     </div>
                     <div className='checkout'>
-                        <Link to='/checkout'><button className="add-to-card checkout-btn">Checkout</button></Link>
+                        <Link to="/checkout"> <button disabled={products.length !== 0 ? false : true} className="add-to-card checkout-btn">Checkout </button></Link>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -14,12 +14,14 @@ const Location = () => {
     }, [])
 
     if (location.length === 0) {
-        return <p className='loading'>Loading...</p>
+        return <p className='loading'>loading...</p>
     }
+
+    const fullLocation = location.state + " " + location.country_name
 
     return (
         <section className='mt full-location'>
-            <h1><FaMapMarkerAlt /> My Location : <span className='location'>{location.state}, {location.country_name}</span></h1>
+            <h1><FaMapMarkerAlt /> My Location : <span className='location'>{!location ? "Location Not found" : fullLocation} </span></h1>
         </section>
     );
 };
