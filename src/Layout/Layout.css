@@ -12,6 +12,18 @@
     width: 220px;
 }
 
+@media screen and (min-width:689px) and (max-width:992px) {
+    .admin-dashboard {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sidebar-wid {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width:688px) {
     .admin-dashboard {
         display: flex;

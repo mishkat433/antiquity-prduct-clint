@@ -32,14 +32,14 @@
 
 .nav-link {
     text-decoration: none;
-    color: black;
+    color: #361D0F;
     font-size: 18px;
 }
 
 .nav-active {
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: #361D0F;
     font-size: 18px;
 }
 

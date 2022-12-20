@@ -6,11 +6,11 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCvhkJgH2Hcd24BTfl2O-HhA1Z1gn_2bEo",
-    authDomain: process.env.REACT_APP_authDomain,
-    projectId: process.env.REACT_APP_projectId,
-    storageBucket: process.env.REACT_APP_storageBucket,
-    messagingSenderId: process.env.REACT_APP_messagingSenderId,
-    appId: process.env.REACT_APP_appId
+    authDomain: "antituity-project.firebaseapp.com",
+    projectId: "antituity-project",
+    storageBucket: "antituity-project.appspot.com",
+    messagingSenderId: "781794170142",
+    appId: "1:781794170142:web:7c9e80abc919738aaae50f"
 };
 
 // Initialize Firebase

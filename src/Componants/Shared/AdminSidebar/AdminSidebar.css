@@ -2,6 +2,17 @@
     background-color: white;
     height: 80vh;
     border-radius: 5px;
+    position: sticky;
+    top: 60px;
+
+
+}
+
+.dashboard-top {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 20px;
+    color: #361D0F;
 }
 
 .side-nav {
@@ -15,13 +26,28 @@
 
 .sidebar-link {
     color: black;
-    margin-top: 10px;
 }
 
 .sidebar-active {
     font-weight: bold;
     color: brown;
 
+}
+
+@media screen and (min-width:689px) and (max-width:992px) {
+    .sidebar-bg {
+        margin-left: 0px;
+        height: 130px;
+    }
+
+    .side-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 0px 10px;
+    }
 }
 
 @media screen and (max-width:688px) {

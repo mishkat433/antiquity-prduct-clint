@@ -27,7 +27,7 @@ const Navbar = () => {
         <li><Link className="shopping" onClick={sidebarHandle}><FaShopify /><sup>{products?.length ? products?.length : 0}</sup></Link></li>
     </>
     return (
-        <nav className='full-nav'>
+        <nav className='full-nav no-print'>
             <div className='container nav'>
                 <div>
                     <Link to='/'> <img className='logo' src={logo} alt="navLogo" /></Link>
