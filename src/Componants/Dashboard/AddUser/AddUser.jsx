@@ -4,7 +4,7 @@ import "./AddUser.css"
 
 const AddUser = () => {
     const [formData, setFormData] = useState({
-        staus: "pending",
+        staus: "Pending",
     })
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState([])

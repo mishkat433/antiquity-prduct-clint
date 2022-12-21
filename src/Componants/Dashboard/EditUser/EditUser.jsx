@@ -31,7 +31,7 @@ const EditUser = () => {
         form.append('image', image.photo)
 
         if (image) {
-            // setLoading(true)
+            setLoading(true)
             fetch(`https://api.imgbb.com/1/upload?key=8c9606c529fcf035df626c98a2bd8605`, {
                 method: "POST",
                 body: form,

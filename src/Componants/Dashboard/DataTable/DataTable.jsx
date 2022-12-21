@@ -62,7 +62,7 @@ const DataTable = () => {
                         {({ toPdf }) => <button className="admin-btn" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> Download</button>}
                     </Pdf>
                     <button className="admin-btn" onClick={printHandle}><FaPrint className='icon' /> Print</button>
-                    <button className='admin-btn' onClick={printHandle}> Show / HideColumn</button>
+                    <button className='admin-btn' > Show / HideColumn</button>
                 </div>
 
                 <div ref={ref} className='print full-table'>

@@ -1,9 +1,9 @@
 .checkout-form {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
     align-items: center;
     padding-top: 20px;
-
     gap: 20px;
 }
 
@@ -45,9 +45,37 @@
     width: 50%;
 }
 
-/* .form {
+.form {
     display: flex;
     flex-direction: column;
     width: 500px;
     gap: 20px;
-} */
+}
+
+@media screen and (max-width:688px) {
+    .checkout-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .single-checkout-full {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 20px;
+        background-color: rgb(206, 206, 252);
+        border-radius: 5px;
+        width: 400px;
+    }
+
+    .side-one {
+        width: 100%;
+    }
+
+    .inner-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+}

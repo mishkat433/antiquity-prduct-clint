@@ -34,8 +34,6 @@ const Products = () => {
             exist.quantity = exist.quantity + 1;
             newCart = [...rest, exist];
         }
-
-
         setCart(newCart);
         addToDb(item._id);
         setProducts(newCart)
