@@ -20,7 +20,7 @@ const EditUser = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5200/singleUser/${id}`)
+        fetch(`https://antiquity-server.vercel.app/singleUser/${id}`)
             .then(res => res.json())
             .then(data => setSelectEditData(data))
     }, [id])
@@ -75,7 +75,7 @@ const EditUser = () => {
         }
         console.log(readyData);
 
-        fetch(`http://localhost:5200/updateUser/${selectEditData?._id}`, {
+        fetch(`https://antiquity-server.vercel.app/updateUser/${selectEditData?._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

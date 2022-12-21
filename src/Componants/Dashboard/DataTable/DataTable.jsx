@@ -24,7 +24,7 @@ const DataTable = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5200/getAllUser')
+        fetch('https://antiquity-server.vercel.app/getAllUser')
             .then(res => res.json())
             .then(data => setAllUser(data))
     }, [reload])
@@ -36,7 +36,7 @@ const DataTable = () => {
     const deleteHandle = (id) => {
         const confirm = window.confirm("Do you want to delete this user?")
         if (confirm) {
-            fetch(`http://localhost:5200/deleteUser/${id}`, {
+            fetch(`https://antiquity-server.vercel.app/deleteUser/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

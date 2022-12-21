@@ -28,7 +28,7 @@ const AddProduct = () => {
     const saveData = (image, data) => {
         const readyData = { image, data }
 
-        fetch('http://localhost:5200/addProduct', {
+        fetch('https://antiquity-server.vercel.app/addProduct', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

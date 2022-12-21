@@ -30,7 +30,7 @@ const AddUser = () => {
     const saveUser = (image, data) => {
         const readyData = { image, data }
 
-        fetch('http://localhost:5200/addUser', {
+        fetch('https://antiquity-server.vercel.app/addUser', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
