@@ -4,7 +4,7 @@ import UserTableRow from './UserTableRow';
 import { toast } from 'react-hot-toast';
 import { FaCloudDownloadAlt, FaPrint } from 'react-icons/fa';
 import Pdf from "react-to-pdf";
-// import { ExportCSV } from "./Excel/ExportToCSV";
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 const options = {
     orientation: 'portrait',
@@ -67,7 +67,14 @@ const DataTable = () => {
                     <Pdf targetRef={ref} options={options} x={.5} y={.5} scale={1} filename="dataTable.pdf">
                         {({ toPdf }) => <button className="admin-btn no-print" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> Download</button>}
                     </Pdf>
-                    <button className="admin-btn no-print" onClick={printHandle}><FaCloudDownloadAlt className='icon' /> Excel Sheet</button>
+                    <ReactHTMLTableToExcel
+                        id="test-table-xls-button"
+                        className="admin-btn no-print"
+                        table="target"
+                        filename="tablexls"
+                        sheet="tablexls"
+                        buttonText="Excel Download" />
+
                     <button className="admin-btn no-print" onClick={printHandle}><FaPrint className='icon' /> Print</button>
                     <select className="admin-btn no-print" onChange={(e) => showHideHandle(e)} name="showHide" id="">
                         <option value="">Show/Hide Column</option>
@@ -82,7 +89,8 @@ const DataTable = () => {
 
                 <div ref={ref} className='print full-table'>
                     <h1 className='heading'>All Users</h1>
-                    <table className="table-customized " >
+
+                    <table className="table-customized " id='target' >
                         <thead>
                             <tr className=''>
                                 <th className='check-th no-print'><input onClick={() => setAllCheck(!allcheck)} type="checkbox" name="" id="" /></th>
@@ -92,7 +100,6 @@ const DataTable = () => {
                                 {showHide === "plan" ? undefined : <th> Plan</th>}
                                 {showHide === "status" ? undefined : <th> Status</th>}
                                 {showHide === "action" ? undefined : <th id='action-row' className='no-print'>action</th>}
-
                             </tr>
                         </thead>
                         <tbody>
@@ -102,6 +109,8 @@ const DataTable = () => {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div>
             </div>
         </div >
     );
