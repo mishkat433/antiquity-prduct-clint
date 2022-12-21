@@ -47,6 +47,11 @@
 /* Mobile responsive */
 
 @media screen and (max-width:688px) {
+    .swiper {
+        width: 100%;
+        height: 20vh;
+        margin-top: 20px;
+    }
 
     .banner-content h1 {
         font-weight: bold;

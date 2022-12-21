@@ -9,7 +9,7 @@ const Products = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        fetch("https://antiquity-server.vercel.app/products")
+        fetch("https://antiquity-server.vercel.app/allProduct")
             .then(res => res.json())
             .then(data => {
                 setAllProducts(data)
