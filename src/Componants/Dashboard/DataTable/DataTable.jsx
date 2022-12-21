@@ -17,11 +17,13 @@ const ref = createRef();
 const DataTable = () => {
     const [allUser, setAllUser] = useState([])
     const [reload, setReload] = useState(true)
+    const [allcheck, setAllCheck] = useState(false)
+    const [showHide, setShowHide] = useState({})
 
 
-    const colHandle = (e) => {
+    // const colHandle = (e) => {
 
-    }
+    // }
 
     useEffect(() => {
         fetch('https://antiquity-server.vercel.app/getAllUser')
@@ -49,6 +51,10 @@ const DataTable = () => {
         }
     }
 
+    const showHideHandle = (e) => {
+        setShowHide(e.target.value)
+    }
+
     if (allUser.length === 0) {
         return <h3>Loading...</h3>
     }
@@ -59,10 +65,19 @@ const DataTable = () => {
             <div className='data-user-table'>
                 <div className='action-btn no-print '>
                     <Pdf targetRef={ref} options={options} x={.5} y={.5} scale={1} filename="dataTable.pdf">
-                        {({ toPdf }) => <button className="admin-btn" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> Download</button>}
+                        {({ toPdf }) => <button className="admin-btn no-print" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> Download</button>}
                     </Pdf>
-                    <button className="admin-btn" onClick={printHandle}><FaPrint className='icon' /> Print</button>
-                    <button className='admin-btn' > Show / HideColumn</button>
+                    <button className="admin-btn no-print" onClick={printHandle}><FaCloudDownloadAlt className='icon' /> Excel Sheet</button>
+                    <button className="admin-btn no-print" onClick={printHandle}><FaPrint className='icon' /> Print</button>
+                    <select className="admin-btn no-print" onChange={(e) => showHideHandle(e)} name="showHide" id="">
+                        <option value="">Show/Hide Column</option>
+                        <option value="user">User</option>
+                        <option value="email">Email</option>
+                        <option value="plan">Plan</option>
+                        <option value="role">Role</option>
+                        <option value="status">Status</option>
+                        <option value="action">Action</option>
+                    </select>
                 </div>
 
                 <div ref={ref} className='print full-table'>
@@ -70,20 +85,20 @@ const DataTable = () => {
                     <table className="table-customized " >
                         <thead>
                             <tr className=''>
-                                <th className='check-th no-print'><input type="checkbox" name="" id="" /></th>
-                                <th> User</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Plan</th>
-                                <th>status</th>
-                                <th id='action-row' className='no-print'>action</th>
+                                <th className='check-th no-print'><input onClick={() => setAllCheck(!allcheck)} type="checkbox" name="" id="" /></th>
+                                {showHide === "user" ? undefined : <th> User</th>}
+                                {showHide === "email" ? undefined : <th>Email</th>}
+                                {showHide === "role" ? undefined : <th> Role</th>}
+                                {showHide === "plan" ? undefined : <th> Plan</th>}
+                                {showHide === "status" ? undefined : <th> Status</th>}
+                                {showHide === "action" ? undefined : <th id='action-row' className='no-print'>action</th>}
+
                             </tr>
                         </thead>
                         <tbody>
                             {
-                                allUser.map(row => <UserTableRow row={row} key={row._id} deleteHandle={deleteHandle} />)
+                                allUser.map(row => <UserTableRow row={row} key={row._id} deleteHandle={deleteHandle} allcheck={allcheck} showHide={showHide} />)
                             }
-
                         </tbody>
                     </table>
                 </div>

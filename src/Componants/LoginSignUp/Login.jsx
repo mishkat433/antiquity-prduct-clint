@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../../Contex/AuthProvider';
-import image from "../../Assets/login.gif"
 import "./LoginSignUp.css"
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { toast } from 'react-hot-toast';

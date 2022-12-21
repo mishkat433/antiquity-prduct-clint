@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContex } from '../../Contex/AuthProvider';
@@ -7,16 +7,15 @@ import CheckoutProducts from './CheckoutProducts';
 
 const Checkout = () => {
     const { products, setProducts, loginUser } = useContext(AuthContex)
-    const [selectedProduct, setSelectedProduct] = useState([])
     const [count, setCount] = useState(null)
 
 
     const navigate = useNavigate()
 
-    const removeHandle = () => {
-        setProducts([])
-        toast.success("Cart Item remove successful")
-    }
+    // const removeHandle = () => {
+    //     setProducts([])
+    //     toast.success("Cart Item remove successful")
+    // }
 
     if (products.langth === 0) {
         return

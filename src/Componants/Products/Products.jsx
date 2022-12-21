@@ -4,7 +4,7 @@ import { AuthContex } from '../../Contex/AuthProvider';
 import ProductCard from './ProductCard';
 
 const Products = () => {
-    const { products, setProducts } = useContext(AuthContex)
+    const { setProducts } = useContext(AuthContex)
     const [allProducts, setAllProducts] = useState([])
     const [cart, setCart] = useState([]);
 

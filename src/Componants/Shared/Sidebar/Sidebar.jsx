@@ -1,35 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { toast } from 'react-hot-toast';
+import React, { useContext } from 'react';
 import { Link, } from 'react-router-dom';
 import { AuthContex } from '../../../Contex/AuthProvider';
 import "./Sidebar.css"
 
 const Sidebar = () => {
-    const { products, setProducts } = useContext(AuthContex)
-    const [selectedProduct, setSelectedProduct] = useState([])
-
-    // useEffect(() => {
-    //     fetch("https://antiquity-server.vercel.app/products")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             let arr = []
-    //             products.forEach(singleProducts => {
-
-    //                 const productFilter = data.filter(da => da?._id === singleProducts)
-    //                 arr.push(productFilter)
-    //             });
-    //             setSelectedProduct(arr)
-    //         })
-    // }, [products])
-
-    // let total = 0;
-
-    // for (const single of selectedProduct) {
-    //     total = single[0]?.price + total
-    // }
-    // let tax = Number((total * 0.08).toFixed(2));
-    // let grandTotal = total + tax;
-
+    const { products } = useContext(AuthContex)
 
 
     let total = 0;

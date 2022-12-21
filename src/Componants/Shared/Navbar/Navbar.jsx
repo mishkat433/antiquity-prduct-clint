@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import "./Navbar.css";
-import logo from "../../../Assets/logo.png";
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaShopify } from 'react-icons/fa';
 import { AuthContex } from '../../../Contex/AuthProvider';

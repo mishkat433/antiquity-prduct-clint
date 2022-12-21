@@ -14,7 +14,6 @@ const EditUser = () => {
     })
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState({ image: selectEditData?.image })
-    const [error, setError] = useState('')
 
     const id = useParams().id
     const navigate = useNavigate()
@@ -103,7 +102,6 @@ const EditUser = () => {
         <section className="full-addUser">
             <form onSubmit={addUserHandle} className="adduser-form">
                 <h1 className='heading'>Edit User</h1>
-                <p className='error-text'>{error}</p>
                 <div className='form-group'>
                     <div className="form-control mb fw">
                         <input onBlur={formHandle} type="text" name="name" placeholder="Name" className="input input-bordered" defaultValue={selectEditData?.data?.name} required />
