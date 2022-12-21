@@ -14,23 +14,24 @@ const Navbar = () => {
     const sidebarHandle = () => {
         setSidebar(!sidebar)
     }
-
     const navItem = <>
         <li><NavLink className={({ isActive }) => isActive ? "nav-active" : "nav-link"} to="/home">Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "nav-active" : "nav-link"} to="/blog">Blog</NavLink></li>
         {checkUser === "admin" && loginUser?.uid && <li><NavLink className={({ isActive }) => isActive ? "nav-active" : "nav-link"} to="/dashboard">Dashboard</NavLink></li>}
+        <li><Link className="shopping" onClick={sidebarHandle}><FaShopify /><sup>{products?.length ? products?.length : 0}</sup></Link></li>
         {
             loginUser?.uid ?
-                <li><Link onClick={() => logout()} className="button">LogOut</Link></li>
+                <div className='after-login'><li><Link onClick={() => logout()} className="button">LogOut</Link></li>
+                    <img className='loginUser-photo' src={loginUser?.photoURL} alt="" />
+                </div>
                 : <li><Link className="button" to="/login">Login</Link></li>
         }
-        <li><Link className="shopping" onClick={sidebarHandle}><FaShopify /><sup>{products?.length ? products?.length : 0}</sup></Link></li>
+
     </>
     return (
         <nav className='full-nav no-print'>
             <div className='container nav'>
                 <div>
-                    <Link to='/'> <img className='logo' src={logo} alt="navLogo" /></Link>
+                    <Link to='/'> <h3 className='title'>Mohammad Borhan Uddin Miskat</h3></Link>
                 </div>
 
                 <div>

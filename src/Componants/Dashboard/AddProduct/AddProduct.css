@@ -1,0 +1,46 @@
+.full-addProduct {
+    margin-left: 25%;
+}
+
+.addproduct-form {
+    width: 800px;
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 5px;
+    /* background-color: rgba(255, 255, 255, 0.838); */
+    /* box-shadow: 0px 8px 22px -10px grey; */
+    user-select: none;
+    border: 1px dashed gray;
+}
+
+@media screen and (min-width:689px) and (max-width:992px) {
+    .full-addProduct {
+        margin: 5px;
+    }
+
+    .addproduct-form {
+        width: 95%;
+        padding: 20px;
+        margin-top: 50px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.838);
+        box-shadow: 0px 8px 22px -10px grey;
+        border: none;
+    }
+}
+
+@media screen and (max-width:688px) {
+    .full-addProduct {
+        margin: 5px;
+    }
+
+    .addproduct-form {
+        width: 90%;
+        padding: 20px;
+        margin-top: 50px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.838);
+        box-shadow: 0px 8px 22px -10px grey;
+        border: none;
+    }
+}

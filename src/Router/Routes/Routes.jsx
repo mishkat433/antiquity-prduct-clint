@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Blog from "../../Componants/Blog/Blog";
 import Checkout from "../../Componants/Checkout/Checkout";
-import Chart from "../../Componants/Dashboard/Chart/Chart";
+import AddProduct from "../../Componants/Dashboard/AddProduct/AddProduct";
+import AddUser from "../../Componants/Dashboard/AddUser/AddUser";
 import Dashboard from "../../Componants/Dashboard/Dashboard/Dashboard";
 import DataTable from "../../Componants/Dashboard/DataTable/DataTable";
-import ImageUpload from "../../Componants/Dashboard/ImageUpload/ImageUpload";
+import EditUser from "../../Componants/Dashboard/EditUser/EditUser";
 import Home from "../../Componants/Home/Home/Home";
 import Login from "../../Componants/LoginSignUp/Login";
 import SignUP from "../../Componants/LoginSignUp/SignUP";
@@ -45,10 +45,6 @@ const routes = createBrowserRouter([
                 path: '/checkout',
                 element: <PrivateRoute><Checkout /></PrivateRoute>
             },
-            {
-                path: '/blog',
-                element: <Blog />
-            }
         ]
     },
     {
@@ -61,16 +57,20 @@ const routes = createBrowserRouter([
                 element: <AdminRoutes><Dashboard /></AdminRoutes>
             },
             {
-                path: '/dashboard/dataTable',
+                path: '/dashboard/allUsers',
                 element: <AdminRoutes><DataTable /></AdminRoutes>
             },
             {
-                path: '/dashboard/imageUpload',
-                element: <AdminRoutes><ImageUpload /></AdminRoutes>
+                path: '/dashboard/allUsers/:id',
+                element: <AdminRoutes><EditUser /></AdminRoutes>
             },
             {
-                path: '/dashboard/chart',
-                element: <AdminRoutes><Chart /></AdminRoutes>
+                path: '/dashboard/AddUser',
+                element: <AdminRoutes><AddUser /> </AdminRoutes>
+            },
+            {
+                path: '/dashboard/addProducts',
+                element: <AdminRoutes><AddProduct /></AdminRoutes>
             },
         ]
     }

@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { addToDb } from '../../hooks/ShoppingCart';
 import { AuthContex } from '../../Contex/AuthProvider';
 import ProductCard from './ProductCard';
 
 const Products = () => {
     const { products, setProducts } = useContext(AuthContex)
     const [allProducts, setAllProducts] = useState([])
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch("https://antiquity-server.vercel.app/products")
@@ -14,10 +16,29 @@ const Products = () => {
             })
     }, [])
 
-    const addToCartHandle = (product) => {
-        let arr = [...products, product._id]
-        setProducts(arr)
-        localStorage.setItem("antiquity", JSON.stringify(arr))
+    // const addToCartHandle = (product) => {
+    //     let arr = [...products, product._id]
+    //     setProducts(arr)
+    //     localStorage.setItem("antiquity", JSON.stringify(arr))
+    // }
+
+    const addToCartHandle = (item) => {
+        const exist = cart.find(product => product._id === item._id);
+        let newCart = []
+        if (!exist) {
+            item.quantity = 1;
+            newCart = [...cart, item]
+        }
+        else {
+            const rest = cart.filter(product => product._id !== item._id)
+            exist.quantity = exist.quantity + 1;
+            newCart = [...rest, exist];
+        }
+        setCart(newCart);
+        addToDb(item._id);
+        // const prev = { ...products, item._id }
+        // prev
+        setProducts([cart, setCart])
     }
 
     if (allProducts.length === 0) {

@@ -5,7 +5,7 @@
     width: 200px;
     height: 100vh;
     z-index: 20;
-    background-color: rgba(247, 228, 228, 0.934);
+    background-color: #d9c3fee4;
     padding: 0 20px;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .checkout-btn:hover {
-    background-color: rgb(5, 111, 76);
+    background-color: #9357fd;
     color: white;
     transition: 0.5s;
 }

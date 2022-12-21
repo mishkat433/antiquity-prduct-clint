@@ -1,8 +1,18 @@
 .checkout-form {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 20px;
+    height: 80vh;
 }
+
+.checkout-image {
+    height: 100px;
+    width: 100px;
+}
+
+.checkout-product {}
+
 
 /* .form {
     display: flex;

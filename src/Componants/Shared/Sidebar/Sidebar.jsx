@@ -7,34 +7,51 @@ import "./Sidebar.css"
 const Sidebar = () => {
     const { products, setProducts } = useContext(AuthContex)
     const [selectedProduct, setSelectedProduct] = useState([])
+    console.log(products);
 
-    useEffect(() => {
-        fetch("https://antiquity-server.vercel.app/products")
-            .then(res => res.json())
-            .then(data => {
-                let arr = []
-                products.forEach(singleProducts => {
+    // useEffect(() => {
+    //     fetch("https://antiquity-server.vercel.app/products")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             let arr = []
+    //             products.forEach(singleProducts => {
 
-                    const productFilter = data.filter(da => da?._id === singleProducts)
-                    arr.push(productFilter)
-                });
-                setSelectedProduct(arr)
-            })
-    }, [products])
+    //                 const productFilter = data.filter(da => da?._id === singleProducts)
+    //                 arr.push(productFilter)
+    //             });
+    //             setSelectedProduct(arr)
+    //         })
+    // }, [products])
 
-    let total = 0;
+    // let total = 0;
 
-    for (const single of selectedProduct) {
-        total = single[0]?.price + total
-    }
-    let tax = Number((total * 0.08).toFixed(2));
-    let grandTotal = total + tax;
+    // for (const single of selectedProduct) {
+    //     total = single[0]?.price + total
+    // }
+    // let tax = Number((total * 0.08).toFixed(2));
+    // let grandTotal = total + tax;
 
     const removeHandle = () => {
         setProducts([])
         toast.success("Cart Item remove successful")
     }
 
+
+    let total = 0;
+    let shippingCharge = 0;
+    let quantity = 0;
+    // for (const singleCart of cart) {
+    //     quantity = quantity + singleCart.quantity
+    //     total = total + singleCart.price * singleCart.quantity;
+    //     shippingCharge += singleCart.shipping * singleCart.quantity;
+    // }
+    let tax = Number((total * 0.1).toFixed(2));
+    let grandTotal = total + shippingCharge + tax;
+
+    // const removeHandle = () => {
+    //     setCart([]);
+    //     deleteShoppingCart();
+    // }
 
     return (
         <div className='container'>

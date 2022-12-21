@@ -1,10 +1,10 @@
 .full-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 30px;
     margin-top: 10px;
-    height: 89vh;
+    height: 80vh;
 }
 
 .form {
@@ -16,6 +16,7 @@
 
 .error-text {
     color: red;
+    text-align: center;
 }
 
 .form-control {
@@ -42,7 +43,7 @@
 }
 
 .login-btn:hover {
-    background-color: brown;
+    background-color: #26075c;
 }
 
 .register {
@@ -53,8 +54,8 @@
     display: block;
 }
 
-@media screen and (max-width:688px) {
+/* @media screen and (max-width:688px) {
     .login-image {
         display: none;
     }
-}
+} */

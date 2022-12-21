@@ -1,12 +1,27 @@
+.full-user-table {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.data-user-table {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    user-select: none;
+}
+
 .table-customized {
     border-collapse: collapse;
     width: 80vw;
+
 }
 
 .table-customized td,
 .table-customized th {
-    border: 1px solid rgb(239, 181, 181);
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
     padding: 8px;
+    height: 40px;
 }
 
 .table-customized tr:nth-child(even) {
@@ -22,40 +37,106 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #361d0f;
-    color: white;
+    background-color: #F9FAFC;
+    color: #000;
 }
 
-/* .th {
-    position: sticky;
-    top: 60px;
-} */
+.check-th {
+    width: 4%;
+}
+
+.image-row {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+}
+
+.user-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* width: ; */
+}
+
+#action-row {
+    text-align: center;
+}
+
+.role-row {
+    text-transform: capitalize;
+}
+
+.edit {
+    background-color: #711eff;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0px 3px;
+}
+
+.delete {
+    background-color: #d55a02;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.action-item {
+    display: none;
+    width: 50px;
+}
+
+.dropdown:hover .action-item {
+    display: flex;
+    gap: 10px;
+}
+
+.status {
+
+    font-weight: bold;
+}
+
+.active {
+    color: #265706;
+    background-color: #b7e897;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.pending {
+    color: #d55a02;
+    background-color: #eebd9a;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.inActive {
+    color: rgb(84, 83, 83);
+    font-weight: bold;
+    background-color: rgb(190, 190, 190);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
 
 .action-btn {
-    width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 40px;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.action-btn button {
-    background-color: #361d0f;
-    color: white;
-    border-radius: 3px;
-    padding: 10px;
-    cursor: pointer;
+.admin-btn {
     border: none;
-}
-
-.action-btn button:hover {
-    background-color: #6a3c1f;
-}
-
-.checkbox {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    font-size: 16px;
+    color: #000;
+    border-radius: 3px;
 }
 
 
@@ -90,5 +171,9 @@
 
     .full-data-table {
         overflow: scroll;
+    }
+
+    .full-table {
+        overflow-x: scroll;
     }
 }

@@ -8,7 +8,7 @@ const AdminRoutes = ({ children }) => {
 
     const location = useLocation()
     if (loading || userCheckLoading) {
-        return <div className=''><button className="loading">loading...</button></div>
+        return <div className=''><h3 className="loading">loading...</h3></div>
     }
     if (loginUser?.uid && checkUser === "admin") {
         return children

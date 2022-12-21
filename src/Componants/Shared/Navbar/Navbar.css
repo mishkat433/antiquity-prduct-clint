@@ -1,5 +1,5 @@
 .full-nav {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 1px 15px -4px grey;
     position: sticky;
     top: 0;
@@ -19,9 +19,8 @@
 }
 
 
-.logo {
-    height: 40px;
-    width: 120px;
+.title {
+    color: #000;
 }
 
 .nav-option {
@@ -32,7 +31,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: #361D0F;
+    color: black;
     font-size: 18px;
 }
 
@@ -49,15 +48,21 @@
 
 .shopping {
     font-size: 20px;
-    color: rgb(82, 13, 13);
+    color: black;
 }
 
 .after-login {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; */
     gap: 20px;
 }
 
+.loginUser-photo {
+    width: 40px;
+    margin-top: -5px;
+}
 
 @media screen and (max-width:688px) {
     .nav-option {
@@ -68,7 +73,7 @@
         position: fixed;
         top: 30px;
         right: 20px;
-        background-color: rgb(247, 229, 229);
+        background-color: #e1d4f7fe;
         padding: 20px;
     }
 
@@ -79,4 +84,12 @@
     .show-hide {
         display: none;
     }
+
+    .after-login {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
 }

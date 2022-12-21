@@ -67,9 +67,6 @@ const Login = () => {
 
     return (
         <section className="full-form container">
-            <div className="login-image" data-aos="fade-right">
-                <img src={image} alt="" />
-            </div>
             <div className='form '>
                 <form onSubmit={LoginHandle} className="">
                     <h1 className=''>Login</h1>

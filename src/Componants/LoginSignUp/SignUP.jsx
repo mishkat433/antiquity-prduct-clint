@@ -81,9 +81,6 @@ const SignUP = () => {
 
     return (
         <section className="full-form register container">
-            <div className="login-image" >
-                <img src={loginImg} alt="" />
-            </div>
             <div className=' form '>
                 <form onSubmit={registerHandle} className="" >
                     {error && <p className='error-text'>{error}</p>}
