@@ -61,7 +61,9 @@
 
 .loginUser-photo {
     width: 40px;
+    height: 40px;
     margin-top: -5px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width:688px) {

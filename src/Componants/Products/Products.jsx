@@ -34,11 +34,11 @@ const Products = () => {
             exist.quantity = exist.quantity + 1;
             newCart = [...rest, exist];
         }
+
+
         setCart(newCart);
         addToDb(item._id);
-        // const prev = { ...products, item._id }
-        // prev
-        setProducts([cart, setCart])
+        setProducts(newCart)
     }
 
     if (allProducts.length === 0) {

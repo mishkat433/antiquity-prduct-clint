@@ -1,11 +1,22 @@
 import React from 'react';
-import "./Checkout.css"
 
-const CheckoutProducts = ({ checkoutProduct }) => {
-    const { image, name, price } = checkoutProduct;
+const CheckoutProducts = ({ prod, countUp, countdown }) => {
+    const { price, name } = prod?.data;
     return (
-        <div className='checkout-product'>
-            <figure><img className="checkout-image" src={image} alt="" /></figure>
+        <div className='single-checkout-full'>
+            <img className='checkout-image' src={prod?.image} alt="" />
+            <div className='inner-card'>
+                <div>
+                    <h4>{name} </h4>
+                    <p>price : ${price}</p>
+                </div>
+                <div className='right'>
+                    <span onClick={() => countdown(prod?._id)} className='pl'>-</span>
+                    <span>{prod.quantity}</span>
+                    <span onClick={() => countUp(prod?._id)} className='pl'>+</span>
+                </div>
+            </div>
+
         </div>
     );
 };

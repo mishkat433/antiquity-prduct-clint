@@ -8,30 +8,10 @@ import CheckoutProducts from './CheckoutProducts';
 const Checkout = () => {
     const { products, setProducts, loginUser } = useContext(AuthContex)
     const [selectedProduct, setSelectedProduct] = useState([])
+    const [count, setCount] = useState(null)
+
 
     const navigate = useNavigate()
-
-    useEffect(() => {
-        fetch("https://antiquity-server.vercel.app/products")
-            .then(res => res.json())
-            .then(data => {
-                let arr = []
-                products.forEach(singleProducts => {
-
-                    const productFilter = data.filter(da => da?._id === singleProducts)
-                    arr.push(productFilter)
-                });
-                setSelectedProduct(arr)
-            })
-    }, [products])
-
-    let total = 0;
-
-    for (const single of selectedProduct) {
-        total = single[0]?.price + total
-    }
-    let tax = Number((total * 0.08).toFixed(2));
-    let grandTotal = total + tax;
 
     const removeHandle = () => {
         setProducts([])
@@ -47,15 +27,27 @@ const Checkout = () => {
         toast.success("Your Order successfully confirmed")
         navigate('/')
     }
+    const countUp = (countpl) => {
+        const getproduct = products.find(p => p._id === countpl)
+        let count = getproduct.quantity
+        getproduct.quantity = getproduct.quantity + 1
+        setCount(count)
+    }
+    const countdown = (countMi) => {
+        const getproduct = products.find(p => p._id === countMi)
+        let count = getproduct.quantity
+        getproduct.quantity = getproduct.quantity - 1
+        setCount(count)
+    }
 
     return (
         <div className='container'>
             <div className=' checkout-form'>
-                {/* <div className=''>
+                <div className='side-one'>
                     {
-                        selectedProduct.map(prodt => <CheckoutProducts checkoutProduct={prodt[0]} key={prodt[0]?._id} />)
+                        products.map(prod => <CheckoutProducts prod={prod} key={prod?._id} countUp={countUp} countdown={countdown} count={count} />)
                     }
-                </div> */}
+                </div>
 
                 <form onSubmit={checkoutHandle} className='form'>
                     <h3>Check out form</h3>
