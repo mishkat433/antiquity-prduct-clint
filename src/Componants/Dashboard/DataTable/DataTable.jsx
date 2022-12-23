@@ -4,7 +4,8 @@ import UserTableRow from './UserTableRow';
 import { toast } from 'react-hot-toast';
 import { FaAngleDown, FaCloudDownloadAlt, FaPrint } from 'react-icons/fa';
 import Pdf from "react-to-pdf";
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import { DownloadTableExcel } from 'react-export-table-to-excel';
+
 
 const options = {
     orientation: 'portrait',
@@ -52,7 +53,7 @@ const DataTable = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        toast.success('Image delete Successful')
+                        toast.success('User delete Successful')
                         setReload(!reload)
                     }
                 })
@@ -79,13 +80,14 @@ const DataTable = () => {
                     <Pdf targetRef={ref} options={options} x={.5} y={.5} scale={1} filename="dataTable.pdf">
                         {({ toPdf }) => <button className="admin-btn no-print" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> Download PDF</button>}
                     </Pdf>
-                    <ReactHTMLTableToExcel
-                        id="test-table-xls-button"
-                        className="admin-btn no-print"
-                        table="target"
-                        filename="tablexls"
-                        sheet="tablexls"
-                        buttonText="Download Excel" />
+
+                    <DownloadTableExcel
+                        filename="users table"
+                        sheet="users"
+                        currentTableRef={ref.current}
+                    >
+                        <button className="admin-btn no-print"> Export excel </button>
+                    </DownloadTableExcel>
 
                     <button className="admin-btn no-print print-btn" onClick={printHandle}><FaPrint className='icon' /> Print</button>
                     <button className="admin-btn no-print" onClick={showHideHandle}> Show/Hide Column <FaAngleDown /></button>

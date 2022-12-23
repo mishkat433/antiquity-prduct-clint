@@ -237,7 +237,6 @@
 
     .admin-btn {
         padding: 2px 2px;
-
     }
 
     .data-user-table {
@@ -252,9 +251,10 @@
         flex-direction: column;
         position: absolute;
         padding: 0px 30px;
-        top: 40px;
+        top: 48px;
         left: 65%;
         z-index: 5;
         background-color: #F5F1FB;
+        border-radius: 3px;
     }
 }

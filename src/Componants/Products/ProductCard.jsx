@@ -11,7 +11,7 @@ const ProductCard = ({ singleProduct, addToCartHandle, countdown, countUp }) => 
                 <h3>{name}</h3>
                 <div className='card-details'>
                     <p>price : ${price}</p>
-                    <p>In Stock : {inStock} Pis</p>
+                    <p>In Stock : {inStock} kg</p>
                 </div>
             </div>
             <div>

@@ -83,7 +83,7 @@ const EditUser = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success("User added success")
+                    toast.success("User update success")
                     setLoading(false)
                     navigate("/dashboard/allUsers")
                 }
