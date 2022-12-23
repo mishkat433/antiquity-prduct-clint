@@ -1,0 +1,30 @@
+.dashboard-full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    gap: 30px;
+}
+
+.dashboard-heading {
+    font-size: 30px;
+    margin-top: 50px;
+    color: #711EFF;
+}
+
+@media screen and (min-width:689px) and (max-width:992px) {
+    .dashboard-full {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:688px) {
+    .dashboard-full {
+        width: 100%;
+    }
+
+    .dashboard-heading {
+        font-size: 20px;
+    }
+
+}

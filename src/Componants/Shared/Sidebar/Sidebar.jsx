@@ -10,7 +10,6 @@ const Sidebar = () => {
     let total = 0;
 
     for (const singleCart of products) {
-        console.log(singleCart);
         total = total + (singleCart?.data?.price * singleCart.quantity)
     }
 

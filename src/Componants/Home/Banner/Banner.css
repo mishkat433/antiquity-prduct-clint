@@ -1,7 +1,8 @@
 .swiper {
     width: 100%;
-    height: 80vh;
+    height: 85vh;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 .swiper-slide {
@@ -9,17 +10,15 @@
     font-size: 18px;
     background: #fff;
     /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    border-radius: 5px;
     display: flex;
-    -webkit-box-pack: center;
+    box-pack: center;
     -ms-flex-pack: center;
-    -webkit-justify-content: center;
+    justify-content: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    -webkit-align-items: center;
+    align-items: center;
     align-items: center;
 }
 
@@ -49,8 +48,7 @@
 @media screen and (max-width:688px) {
     .swiper {
         width: 100%;
-        height: 20vh;
-        margin-top: 20px;
+        height: 30vh;
     }
 
     .banner-content h1 {

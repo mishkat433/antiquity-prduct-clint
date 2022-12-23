@@ -72,7 +72,6 @@ const EditUser = () => {
         if (readyData.data.plan === "") {
             readyData.data.plan = selectEditData?.data?.plan;
         }
-        console.log(readyData);
 
         fetch(`https://antiquity-server.vercel.app/updateUser/${selectEditData?._id}`, {
             method: "PUT",
@@ -98,6 +97,11 @@ const EditUser = () => {
     const fileHandle = (e) => {
         setImage({ ...image, [e.target.name]: e.target.files[0] });
     }
+
+    if (selectEditData.length === 0) {
+        return <h3 className='loading'>Loading...</h3>
+    }
+
     return (
         <section className="full-addUser">
             <form onSubmit={addUserHandle} className="adduser-form">

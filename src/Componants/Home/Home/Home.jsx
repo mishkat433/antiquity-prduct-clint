@@ -3,7 +3,7 @@ import { AuthContex } from '../../../Contex/AuthProvider';
 import Products from '../../Products/Products';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import Banner from '../Banner/Banner';
-import Location from '../Location/Location';
+// import Location from '../Location/Location';
 
 const Home = () => {
     const { sidebar } = useContext(AuthContex)
@@ -12,7 +12,7 @@ const Home = () => {
             <div className={sidebar ? 'home-layout' : undefined}>
                 <div className=''>
                     <Banner />
-                    <Location />
+                    {/* <Location /> */}
                     <Products />
                 </div>
                 <div>

@@ -19,7 +19,7 @@
 .table-customized td,
 .table-customized th {
     border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
+    /* border-bottom: 1px solid #e3e3e3; */
     padding: 8px;
     height: 40px;
 }
@@ -81,20 +81,28 @@
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .action-item {
     display: none;
-    width: 50px;
+    width: 40px;
+    margin-right: 30px;
 }
 
-.dropdown:hover .action-item {
-    display: flex;
+.dropdown {
+    position: relative;
+}
+
+.dropdown:focus-within .action-item {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: -15px;
     gap: 10px;
 }
 
 .status {
-
     font-weight: bold;
 }
 
@@ -107,8 +115,8 @@
 }
 
 .pending {
-    color: #d55a02;
-    background-color: #eebd9a;
+    color: #bc4f02;
+    background-color: #f7e1d2;
     border: none;
     border-radius: 5px;
     padding: 5px;
@@ -127,6 +135,7 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    position: relative;
 }
 
 .admin-btn {
@@ -137,6 +146,43 @@
     font-size: 16px;
     color: #000;
     border-radius: 3px;
+}
+
+.print-btn {
+    display: block;
+}
+
+.action-dot {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.full-showHide {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 0px 50px;
+    top: 40px;
+    left: 33%;
+    z-index: 5;
+    /* background-color: #F5F1FB; */
+    animation: growDown 300ms ease-in-out
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1.1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
 }
 
 
@@ -155,12 +201,20 @@
     .full-data-table {
         overflow: scroll;
     }
+
+    .data-user-table {
+        width: auto;
+        padding: 20px;
+        border-radius: 5px;
+        user-select: none;
+
+    }
 }
 
 @media screen and (max-width:688px) {
     .table-customized {
         border-collapse: collapse;
-        width: 100%;
+        width: 80%;
         overflow-x: scroll;
         margin: 10px;
     }
@@ -175,5 +229,32 @@
 
     .full-table {
         overflow-x: scroll;
+    }
+
+    .print-btn {
+        display: none;
+    }
+
+    .admin-btn {
+        padding: 2px 2px;
+
+    }
+
+    .data-user-table {
+        width: auto;
+        padding: 20px;
+        border-radius: 5px;
+        user-select: none;
+    }
+
+    .full-showHide {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding: 0px 30px;
+        top: 40px;
+        left: 65%;
+        z-index: 5;
+        background-color: #F5F1FB;
     }
 }

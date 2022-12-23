@@ -14,19 +14,53 @@
     align-items: center;
 }
 
+.sub-nav {
+    display: flex;
+    gap: 30px;
+}
+
 .bar {
     display: none;
 }
 
+input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #cfb7f8fe;
+
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-btn {
+    padding: 6px 10px;
+    color: #52259ffe;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    background-color: #dbcbf8fe;
+    border-radius: 0px 5px 5px 0px;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
 
 .title {
     color: #000;
+    font-size: 20px;
 }
 
 .nav-option {
     list-style-type: none;
     display: flex;
     gap: 30px;
+    border-radius: 3px;
 }
 
 .nav-link {
@@ -38,7 +72,7 @@
 .nav-active {
     font-weight: bold;
     text-decoration: none;
-    color: #361D0F;
+    color: #8a4bf7fe;
     font-size: 18px;
 }
 
@@ -66,6 +100,19 @@
     border-radius: 50%;
 }
 
+
+
+@media screen and (min-width:689px) and (max-width:992px) {
+    .sub-nav {
+        display: block;
+        gap: 30px;
+    }
+
+    .serc {
+        display: none;
+    }
+}
+
 @media screen and (max-width:688px) {
     .nav-option {
         list-style-type: none;
@@ -73,10 +120,32 @@
         flex-direction: column;
         gap: 10px;
         position: fixed;
-        top: 30px;
-        right: 20px;
-        background-color: #e1d4f7fe;
+        top: 90px;
+        right: 5px;
+        background-color: #f0eafbfe;
         padding: 20px;
+        animation: growDown 300ms ease-in-out
+    }
+
+    @keyframes growDown {
+        0% {
+            transform: scaleY(0)
+        }
+
+        80% {
+            transform: scaleY(1.1)
+        }
+
+        100% {
+            transform: scaleY(1)
+        }
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .bar {
@@ -92,6 +161,12 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
+    }
+
+    .sub-nav {
+        display: flex;
+        gap: 34px;
+        margin-bottom: 10px;
     }
 
 }

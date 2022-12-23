@@ -18,11 +18,12 @@
 
 .admin-bar {
     color: #361D0F;
-    margin-left: 40px;
     padding-top: 20px;
     margin-top: 0px;
     cursor: pointer;
     font-size: 22px;
+    text-align: end;
+    margin-right: 35px;
 }
 
 

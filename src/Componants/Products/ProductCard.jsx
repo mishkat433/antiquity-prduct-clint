@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Products.css"
 
-const ProductCard = ({ singleProduct, addToCartHandle }) => {
+const ProductCard = ({ singleProduct, addToCartHandle, countdown, countUp }) => {
 
     const { name, price, inStock } = singleProduct?.data
     return (
@@ -15,7 +15,15 @@ const ProductCard = ({ singleProduct, addToCartHandle }) => {
                 </div>
             </div>
             <div>
-                <button onClick={() => addToCartHandle(singleProduct)} className='add-to-card button'>add to cart</button>
+                {
+                    singleProduct?.select ? <div className='product-counter-full'>
+                        <button onClick={() => countdown(singleProduct?._id)} className='counter-btn'>-</button>
+                        <span>{singleProduct.quantity}</span>
+                        <button onClick={() => countUp(singleProduct?._id)} className='counter-btn'>+</button>
+                    </div> :
+                        <button onClick={() => addToCartHandle(singleProduct)} className='add-to-card button'>add to cart</button>
+                }
+
             </div>
         </div>
     );
