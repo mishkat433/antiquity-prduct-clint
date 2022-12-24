@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEllipsisV, FaPencilAlt } from 'react-icons/fa';
+import { FaEllipsisV, FaPencilAlt, FaPenNib, FaTrash } from 'react-icons/fa';
 import { FcBusinessman, FcSelfServiceKiosk, FcServices, FcSynchronize } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
@@ -16,8 +16,8 @@ const UserTableRow = ({ row, deleteHandle, allcheck, columnShow, }) => {
             {columnShow.status === "status" ? <td className=""><button className={(staus === "Pending" && "pending") || (staus === "In Active" && "inActive") || (staus === "Active" && "active")}>{staus}</button> </td> : undefined}
             {columnShow.action === "action" ? <td id='action-row' className='dropdown no-print'><button className='action-dot'><FaEllipsisV /></button>
                 <div className='action-item'>
-                    <Link to={`/dashboard/allUsers/${row?._id}`} className='edit'>Edit</Link>
-                    <button onClick={() => deleteHandle(row?._id)} className='delete'>Delete</button>
+                    <Link to={`/dashboard/allUsers/${row?._id}`} className='edit'><FaPenNib /></Link>
+                    <button onClick={() => deleteHandle(row?._id)} className='delete' title='delete'><FaTrash /></button>
                 </div>
             </td> : undefined}
         </tr>
