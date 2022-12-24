@@ -17,7 +17,6 @@
 }
 
 .admin-bar {
-    color: #361D0F;
     padding-top: 20px;
     margin-top: 0px;
     cursor: pointer;
@@ -42,14 +41,14 @@
 }
 
 .sidebar-link {
-    color: black;
-    font-size: 20px;
+    color: #1d073f;
+    font-size: 18px;
 }
 
 .sidebar-active {
     font-weight: bold;
     color: #711eff;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .staus {

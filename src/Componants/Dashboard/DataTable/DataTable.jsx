@@ -21,7 +21,7 @@ const DataTable = () => {
     const [reload, setReload] = useState(true)
     const [allcheck, setAllCheck] = useState(false)
     const [showHide, setShowHide] = useState(false)
-    const [columnShow, setcolumnShow] = useState({ user: "user", email: "email", plan: "plan", role: "role", status: "status", action: "action" })
+    const [columnShow, setcolumnShow] = useState({ user: "user", email: "email", plan: "plan", role: "role", status: "status", action: "action", selectBox: "selectBox" })
 
     useEffect(() => {
         fetch('https://antiquity-server.vercel.app/getAllUser')
@@ -43,10 +43,6 @@ const DataTable = () => {
                     }
                 })
         }
-    }
-
-    const showHideHandle = () => {
-        setShowHide(!showHide)
     }
 
     const columnHandle = (e) => {
@@ -83,15 +79,16 @@ const DataTable = () => {
                         buttonText="Excel" />
 
                     <button className="admin-btn no-print" onClick={() => window.print()}><FaPrint className='icon' /> Print</button>
-                    <button className="admin-btn no-print" onClick={showHideHandle}> Show/Hide Column <FaAngleDown /></button>
+                    <button className="admin-btn no-print" onClick={() => setShowHide(!showHide)}> Show/Hide Column <FaAngleDown /></button>
                     {
-                        showHide && <div className='full-showHide'>
-                            <label htmlFor="user"><input onClick={columnHandle} type="checkbox" name="user" id="user" value={columnShow.user === "user" ? "" : "user"} defaultChecked={columnShow.user === "user" ? true : false} />User</label>
-                            <label htmlFor="email"><input onClick={columnHandle} type="checkbox" name="email" id="email" value={columnShow.email === "email" ? "" : "email"} defaultChecked={columnShow.email === "email" ? true : false} />Email</label>
-                            <label htmlFor="plan"><input onChange={columnHandle} type="checkbox" name="plan" id="plan" value={columnShow.plan === "plan" ? "" : "plan"} defaultChecked={columnShow.plan === "plan" ? true : false} />Plan</label>
-                            <label htmlFor="role"><input onChange={columnHandle} type="checkbox" name="role" id="role" value={columnShow.role === "role" ? "" : "role"} defaultChecked={columnShow.role === "role" ? true : false} />Role</label>
-                            <label htmlFor="status"><input onChange={columnHandle} type="checkbox" name="status" id="status" value={columnShow.status === "status" ? "" : "status"} defaultChecked={columnShow.status === "status" ? true : false} />Status</label>
-                            <label htmlFor="action"><input onChange={columnHandle} type="checkbox" name="action" id="action" value={columnShow.action === "action" ? "" : "action"} defaultChecked={columnShow.action === "action" ? true : false} />Action</label>
+                        showHide && <div className='full-showHide no-print'>
+                            <label className='no-print border' htmlFor="selectBox"><input onClick={columnHandle} type="checkbox" name="selectBox" id="selectBox" value={columnShow.selectBox === "selectBox" ? "" : "selectBox"} defaultChecked={columnShow.user === "user" ? true : false} />SelectBox</label>
+                            <label className='no-print border' htmlFor="user"><input onClick={columnHandle} type="checkbox" name="user" id="user" value={columnShow.user === "user" ? "" : "user"} defaultChecked={columnShow.user === "user" ? true : false} />User</label>
+                            <label className='no-print border' htmlFor="email"><input onClick={columnHandle} type="checkbox" name="email" id="email" value={columnShow.email === "email" ? "" : "email"} defaultChecked={columnShow.email === "email" ? true : false} />Email</label>
+                            <label className='no-print border' htmlFor="plan"><input onChange={columnHandle} type="checkbox" name="plan" id="plan" value={columnShow.plan === "plan" ? "" : "plan"} defaultChecked={columnShow.plan === "plan" ? true : false} />Plan</label>
+                            <label className='no-print border' htmlFor="role"><input onChange={columnHandle} type="checkbox" name="role" id="role" value={columnShow.role === "role" ? "" : "role"} defaultChecked={columnShow.role === "role" ? true : false} />Role</label>
+                            <label className='no-print border' htmlFor="status"><input onChange={columnHandle} type="checkbox" name="status" id="status" value={columnShow.status === "status" ? "" : "status"} defaultChecked={columnShow.status === "status" ? true : false} />Status</label>
+                            <label className='no-print border' htmlFor="action"><input onChange={columnHandle} type="checkbox" name="action" id="action" value={columnShow.action === "action" ? "" : "action"} defaultChecked={columnShow.action === "action" ? true : false} />Action</label>
                         </div>
                     }
 
@@ -102,7 +99,8 @@ const DataTable = () => {
                     <table className="table-customized " id='target'  >
                         <thead>
                             <tr className=''>
-                                <th className='check-th no-print' title='select all users'><input onClick={() => setAllCheck(!allcheck)} type="checkbox" name="" id="" /></th>
+
+                                {columnShow.selectBox === "selectBox" ? <th className='check-th no-print' title='select all users'><input onClick={() => setAllCheck(!allcheck)} type="checkbox" name="" id="" /></th> : undefined}
                                 {columnShow.user === "user" ? <th> User</th> : undefined}
                                 {columnShow.email === "email" ? <th>Email</th> : undefined}
                                 {columnShow.role === "role" ? <th> Role</th> : undefined}

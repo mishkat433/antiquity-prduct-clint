@@ -58,8 +58,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
     /* width: ; */
 }
+
 
 #action-row {
     text-align: center;
@@ -152,11 +154,13 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.4s;
+
 }
 
 .admin-btn:hover {
     background-color: #9c63fe;
     color: #fff;
+    box-shadow: 0px 8px 22px -10px grey;
 }
 
 .print-btn {
@@ -175,12 +179,17 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    padding: 0px 50px;
-    top: 40px;
-    left: 30%;
+    padding: 5px 20px;
+    top: 42px;
+    left: 25%;
     z-index: 5;
-    /* background-color: #F5F1FB; */
-    animation: growDown 300ms ease-in-out
+    background-color: #F5F1FB;
+    animation: growDown 300ms ease-in-out;
+    border-radius: 3px;
+}
+
+.laptop {
+    color: red;
 }
 
 @keyframes growDown {
@@ -219,7 +228,11 @@
         padding: 20px;
         border-radius: 5px;
         user-select: none;
+    }
 
+    .full-showHide {
+        top: 43px;
+        left: 34%;
     }
 }
 
@@ -264,7 +277,7 @@
         position: absolute;
         padding: 0px 30px;
         top: 48px;
-        left: 65%;
+        left: 60%;
         z-index: 5;
         background-color: #F5F1FB;
         border-radius: 3px;
