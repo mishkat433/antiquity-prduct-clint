@@ -120,6 +120,7 @@ const EditUser = () => {
                         <option defaultValue="Admin" className="selector">Admin</option>
                         <option defaultValue="Editor" className="selector">Editor</option>
                         <option defaultValue="Author" className="selector">Author</option>
+                        <option defaultValue="Subscriber" className="selector">Subscriber</option>
                         <option defaultValue="Maintainer" className="selector">Maintainer</option>
                     </select>
                     <p className='default'>Current Role : {selectEditData?.data?.role}</p>

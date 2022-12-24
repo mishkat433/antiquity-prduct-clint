@@ -71,6 +71,7 @@ const AddUser = () => {
                         <option value="Admin" className="selector">Admin</option>
                         <option value="Editor" className="selector">Editor</option>
                         <option value="Author" className="selector">Author</option>
+                        <option value="Subscriber" className="selector">Subscriber</option>
                         <option value="Maintainer" className="selector">Maintainer</option>
                     </select>
                 </div>
