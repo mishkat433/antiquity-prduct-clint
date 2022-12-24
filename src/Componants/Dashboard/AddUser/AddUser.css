@@ -18,6 +18,14 @@
     gap: 20px;
 }
 
+.input::file-selector-button {
+    background-color: #6832c4;
+    border: none;
+    padding: 3px;
+    border-radius: 3px;
+    color: white;
+}
+
 .fw {
     width: 50%;
 }

@@ -4,7 +4,8 @@ import UserTableRow from './UserTableRow';
 import { toast } from 'react-hot-toast';
 import { FaAngleDown, FaCloudDownloadAlt, FaPrint } from 'react-icons/fa';
 import Pdf from "react-to-pdf";
-import { DownloadTableExcel } from 'react-export-table-to-excel';
+// import { DownloadTableExcel } from 'react-export-table-to-excel';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 
 const options = {
@@ -20,29 +21,13 @@ const DataTable = () => {
     const [reload, setReload] = useState(true)
     const [allcheck, setAllCheck] = useState(false)
     const [showHide, setShowHide] = useState(false)
-    const [columnShow, setcolumnShow] = useState({
-        user: "user",
-        email: "email",
-        plan: "plan",
-        role: "role",
-        status: "status",
-        action: "action"
-    })
-
-
-    // const colHandle = (e) => {
-
-    // }
+    const [columnShow, setcolumnShow] = useState({ user: "user", email: "email", plan: "plan", role: "role", status: "status", action: "action" })
 
     useEffect(() => {
         fetch('https://antiquity-server.vercel.app/getAllUser')
             .then(res => res.json())
             .then(data => setAllUser(data))
     }, [reload])
-
-    const printHandle = () => {
-        window.print()
-    }
 
     const deleteHandle = (id) => {
         const confirm = window.confirm("Do you want to delete this user?")
@@ -78,18 +63,26 @@ const DataTable = () => {
             <div className='data-user-table'>
                 <div className='action-btn no-print '>
                     <Pdf targetRef={ref} options={options} x={.5} y={.5} scale={1} filename="dataTable.pdf">
-                        {({ toPdf }) => <button className="admin-btn no-print" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> Download PDF</button>}
+                        {({ toPdf }) => <button className="admin-btn no-print" onClick={toPdf}><FaCloudDownloadAlt className='icon' /> PDF</button>}
                     </Pdf>
 
-                    <DownloadTableExcel
+                    {/* <DownloadTableExcel
                         filename="users table"
                         sheet="users"
                         currentTableRef={ref.current}
                     >
-                        <button className="admin-btn no-print"> Export excel </button>
-                    </DownloadTableExcel>
+                        <button className="admin-btn no-print">Download Excel</button>
+                    </DownloadTableExcel> */}
 
-                    <button className="admin-btn no-print print-btn" onClick={printHandle}><FaPrint className='icon' /> Print</button>
+                    <ReactHTMLTableToExcel
+                        id="test-table-xls-button"
+                        className="admin-btn no-print"
+                        table="target"
+                        filename="usertable"
+                        sheet="tablexls"
+                        buttonText="Excel" />
+
+                    <button className="admin-btn no-print" onClick={() => window.print()}><FaPrint className='icon' /> Print</button>
                     <button className="admin-btn no-print" onClick={showHideHandle}> Show/Hide Column <FaAngleDown /></button>
                     {
                         showHide && <div className='full-showHide'>
@@ -101,11 +94,12 @@ const DataTable = () => {
                             <label htmlFor="action"><input onChange={columnHandle} type="checkbox" name="action" id="action" value={columnShow.action === "action" ? "" : "action"} defaultChecked={columnShow.action === "action" ? true : false} />Action</label>
                         </div>
                     }
+
                 </div>
 
                 <div ref={ref} className='print full-table'>
                     <h1 className='heading2 '>All Users</h1>
-                    <table className="table-customized " id='target' >
+                    <table className="table-customized " id='target'  >
                         <thead>
                             <tr className=''>
                                 <th className='check-th no-print' title='select all users'><input onClick={() => setAllCheck(!allcheck)} type="checkbox" name="" id="" /></th>

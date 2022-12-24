@@ -9,7 +9,7 @@ const UserTableRow = ({ row, deleteHandle, allcheck, columnShow, }) => {
     return (
         <tr>
             <td className='no-print'>{allcheck ? <input checked={allcheck ? true : false} type="checkbox" name="" id="" /> : <input type="checkbox" name="" id="" />}</td>
-            {columnShow.user === "user" ? <td className='user-row'> <img className='image-row' src={row.image} alt="" /> <h4>{name}</h4> </td> : undefined}
+            {columnShow.user === "user" ? <td className='user-row'> <img className='image-row' src={row.image} alt="" /> <p>{name}</p> </td> : undefined}
             {columnShow.email === "email" ? <td>{email}</td> : undefined}
             {columnShow.role === "role" ? <td className='role-row'>{role === 'Admin' && <FcSelfServiceKiosk />} {role === 'Editor' && <FaMarker />} {role === "Maintainer" && <FcSynchronize />} {role === 'Author' && <FcServices />} {role}</td> : undefined}
             {columnShow.plan === "plan" ? <td className='role-row'>{plan}</td> : undefined}

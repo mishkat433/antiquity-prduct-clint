@@ -1,8 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth"
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth"
 import app from '../Firebase/Firebase.config';
 import { toast } from 'react-hot-toast';
-// import { toast } from 'react-toastify';
 
 export const AuthContex = createContext();
 const auth = getAuth(app)
@@ -14,16 +13,10 @@ const AuthProvider = ({ children }) => {
     const [products, setProducts] = useState([])
 
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
 
     const googleSiginIn = () => {
         return signInWithPopup(auth, googleProvider)
     }
-
-    const githubLogin = () => {
-        return signInWithPopup(auth, githubProvider)
-    }
-
 
     const loginUserManualy = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
@@ -51,6 +44,7 @@ const AuthProvider = ({ children }) => {
         })
         return () => unsubscribe();
     }, [])
+
     const authInfo = {
         loginUser, setLoginUser, loading, setLoading,
         googleSiginIn,
@@ -58,10 +52,10 @@ const AuthProvider = ({ children }) => {
         loginUserManualy,
         createUser,
         profileUpdate,
-        githubLogin,
         sidebar,
         setSidebar,
-        products, setProducts
+        products,
+        setProducts,
     }
 
     return (

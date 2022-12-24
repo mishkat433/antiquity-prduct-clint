@@ -47,10 +47,12 @@ const Products = () => {
         const getproduct = products.find(p => p._id === countMi)
         let count = getproduct.quantity
         getproduct.quantity = getproduct.quantity - 1
+        setCount(count)
         if (getproduct.quantity === 0) {
+            const removeProduct = products.filter(pr => pr._id !== countMi)
+            setProducts(removeProduct)
             return getproduct.select = false
         }
-        setCount(count)
     }
 
     if (allProducts.length === 0) {
