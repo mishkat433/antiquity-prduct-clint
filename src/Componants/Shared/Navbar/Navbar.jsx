@@ -34,7 +34,7 @@ const Navbar = () => {
                 </div>
                 <div className='sub-nav'>
                     <div className="search-container serc">
-                        <input type="text" placeholder="Search.." name="search" />
+                        <input type="text" placeholder="Search.." name="search" className='search-input' />
                         <button className='search-btn' ><FaSearch /></button>
                     </div>
                     <div>

@@ -176,7 +176,7 @@
     position: absolute;
     padding: 0px 50px;
     top: 40px;
-    left: 33%;
+    left: 30%;
     z-index: 5;
     /* background-color: #F5F1FB; */
     animation: growDown 300ms ease-in-out
