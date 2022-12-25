@@ -3,9 +3,7 @@ import { toast } from 'react-hot-toast';
 import "./AddUser.css"
 
 const AddUser = () => {
-    const [formData, setFormData] = useState({
-        staus: "Pending",
-    })
+    const [formData, setFormData] = useState({})
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState([])
 
@@ -65,25 +63,36 @@ const AddUser = () => {
                         <input onChange={formHandle} type="email" name="email" placeholder="email" className="input input-bordered" required />
                     </div>
                 </div>
-                <div className="form-control mb  selector">
-                    <select onChange={formHandle} name="role" id="" required>
-                        <option value="" className="selector">Select Role</option>
-                        <option value="Admin" className="selector">Admin</option>
-                        <option value="Editor" className="selector">Editor</option>
-                        <option value="Author" className="selector">Author</option>
-                        <option value="Subscriber" className="selector">Subscriber</option>
-                        <option value="Maintainer" className="selector">Maintainer</option>
+                <div className="form-group">
+                    <div className="form-control mb fw selector">
+                        <select onChange={formHandle} name="role" id="" required>
+                            <option value="" className="selector">Select Role</option>
+                            <option value="Admin" className="selector">Admin</option>
+                            <option value="Editor" className="selector">Editor</option>
+                            <option value="Author" className="selector">Author</option>
+                            <option value="Subscriber" className="selector">Subscriber</option>
+                            <option value="Maintainer" className="selector">Maintainer</option>
+                        </select>
+                    </div>
+                    <div className="form-control mb fw selector">
+                        <select onChange={formHandle} name="plan" id="" required>
+                            <option value="" className="selector">Select Plan</option>
+                            <option value="Enterprise" className="selector">Enterprise</option>
+                            <option value="Team" className="selector">Team</option>
+                            <option value="Company" className="selector">Company</option>
+                            <option value="Basic" className="selector">Basic</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="form-control mb selector">
+                    <select onChange={formHandle} name="staus" id="" required>
+                        <option value='' className="selector">Select Status</option>
+                        <option value="Pending" className="selector">Pending</option>
+                        <option value="Active" className="selector">Active</option>
+                        <option value="In active" className="selector">In Active</option>
                     </select>
                 </div>
-                <div className="form-control mb  selector">
-                    <select onChange={formHandle} name="plan" id="" required>
-                        <option value="" className="selector">Select Plan</option>
-                        <option value="Enterprise" className="selector">Enterprise</option>
-                        <option value="Team" className="selector">Team</option>
-                        <option value="Company" className="selector">Company</option>
-                        <option value="Basic" className="selector">Basic</option>
-                    </select>
-                </div>
+
                 <div className="form-control mb ">
                     <input onChange={fileHandle} type="file" name="photo" placeholder="Photo" className="input file input-bordered" required />
                 </div>

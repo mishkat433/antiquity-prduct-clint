@@ -26,8 +26,11 @@ const DataTable = () => {
     useEffect(() => {
         fetch('https://antiquity-server.vercel.app/getAllUser')
             .then(res => res.json())
-            .then(data => setAllUser(data))
+            .then(data => {
+                setAllUser(data)
+            })
     }, [reload])
+
 
     const deleteHandle = (id) => {
         const confirm = window.confirm("Do you want to delete this user?")
@@ -111,7 +114,7 @@ const DataTable = () => {
                         </thead>
                         <tbody>
                             {
-                                allUser.map(row => <UserTableRow row={row} key={row._id} deleteHandle={deleteHandle} allcheck={allcheck} columnShow={columnShow} />)
+                                allUser?.map(row => <UserTableRow row={row} key={row._id} deleteHandle={deleteHandle} allcheck={allcheck} columnShow={columnShow} />)
                             }
                         </tbody>
                     </table>
